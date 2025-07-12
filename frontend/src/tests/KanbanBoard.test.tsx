@@ -19,13 +19,15 @@ beforeEach(() => {
   // Reset mocks before each test
   mockUsePositionFlow.mockReturnValue({
     data: {
-      positionName: "Full Stack Developer",
+      positionName: "Senior Backend Engineer",
       interviewFlow: {
         id: 1,
         description: "Technical Interview Process",
         interviewSteps: [
-          { id: 1, interviewFlowId: 1, interviewTypeId: 1, name: "Initial Review", orderIndex: 1 },
-          { id: 2, interviewFlowId: 1, interviewTypeId: 2, name: "Technical Screen", orderIndex: 2 }
+          { id: 1, interviewFlowId: 1, interviewTypeId: 1, name: "Llamada telefónica", orderIndex: 1 },
+          { id: 2, interviewFlowId: 1, interviewTypeId: 2, name: "Entrevista técnica", orderIndex: 2 },
+          { id: 3, interviewFlowId: 1, interviewTypeId: 3, name: "Entrevista cultural", orderIndex: 3 },
+          { id: 4, interviewFlowId: 1, interviewTypeId: 4, name: "Entrevista manager", orderIndex: 4 }
         ]
       }
     },
@@ -39,9 +41,16 @@ beforeEach(() => {
       {
         id: 1,
         fullName: "John Doe",
-        currentInterviewStep: "Initial Review",
+        currentInterviewStep: "Entrevista técnica",
         applicationId: 101,
-        averageScore: 85
+        averageScore: 4.2
+      },
+      {
+        id: 2,
+        fullName: "Jane Smith",
+        currentInterviewStep: "Llamada telefónica",
+        applicationId: 102,
+        averageScore: 3.8
       }
     ],
     loading: false,
@@ -61,8 +70,10 @@ describe('KanbanBoard Component', () => {
     render(<KanbanBoard positionId={1} />);
 
     await waitFor(() => {
-      expect(screen.getByText('Initial Review')).toBeInTheDocument();
-      expect(screen.getByText('Technical Screen')).toBeInTheDocument();
+      expect(screen.getByText('Llamada telefónica')).toBeInTheDocument();
+      expect(screen.getByText('Entrevista técnica')).toBeInTheDocument();
+      expect(screen.getByText('Entrevista cultural')).toBeInTheDocument();
+      expect(screen.getByText('Entrevista manager')).toBeInTheDocument();
     });
   });
 

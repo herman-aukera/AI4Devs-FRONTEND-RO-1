@@ -2,18 +2,17 @@
 
 import { CandidateApiResponse, PositionApiResponse } from '../types/kanban';
 
-// Mock data for testing
+// Mock data for testing - matching exact requirements from the task
 const mockInterviewFlow: PositionApiResponse = {
-  positionName: "Full Stack Developer",
+  positionName: "Senior Backend Engineer",
   interviewFlow: {
     id: 1,
-    description: "Technical Interview Process",
+    description: "Standard development interview process",
     interviewSteps: [
-      { id: 1, interviewFlowId: 1, interviewTypeId: 1, name: "Initial Review", orderIndex: 1 },
-      { id: 2, interviewFlowId: 1, interviewTypeId: 2, name: "Technical Screen", orderIndex: 2 },
-      { id: 3, interviewFlowId: 1, interviewTypeId: 3, name: "On-site Interview", orderIndex: 3 },
-      { id: 4, interviewFlowId: 1, interviewTypeId: 4, name: "Final Interview", orderIndex: 4 },
-      { id: 5, interviewFlowId: 1, interviewTypeId: 5, name: "Offer", orderIndex: 5 }
+      { id: 1, interviewFlowId: 1, interviewTypeId: 1, name: "Llamada telefónica", orderIndex: 1 },
+      { id: 2, interviewFlowId: 1, interviewTypeId: 2, name: "Entrevista técnica", orderIndex: 2 },
+      { id: 3, interviewFlowId: 1, interviewTypeId: 3, name: "Entrevista cultural", orderIndex: 3 },
+      { id: 4, interviewFlowId: 1, interviewTypeId: 4, name: "Entrevista manager", orderIndex: 4 }
     ]
   }
 };
@@ -22,44 +21,37 @@ const mockCandidates: CandidateApiResponse[] = [
   {
     id: 1,
     fullName: "John Doe",
-    currentInterviewStep: "1",
+    currentInterviewStep: "Entrevista técnica",
     applicationId: 101,
-    averageScore: 85
+    averageScore: 4.2
   },
   {
     id: 2,
     fullName: "Jane Smith",
-    currentInterviewStep: "2",
+    currentInterviewStep: "Llamada telefónica",
     applicationId: 102,
-    averageScore: 92
+    averageScore: 3.8
   },
   {
     id: 3,
-    fullName: "Mike Johnson",
-    currentInterviewStep: "1",
+    fullName: "Bob Brown",
+    currentInterviewStep: "Entrevista cultural",
     applicationId: 103,
-    averageScore: 78
+    averageScore: 4.5
   },
   {
     id: 4,
-    fullName: "Sarah Wilson",
-    currentInterviewStep: "3",
+    fullName: "Eva White",
+    currentInterviewStep: "Entrevista manager",
     applicationId: 104,
-    averageScore: 88
+    averageScore: 4.8
   },
   {
     id: 5,
-    fullName: "David Brown",
-    currentInterviewStep: "4",
+    fullName: "Alice Johnson",
+    currentInterviewStep: "Llamada telefónica",
     applicationId: 105,
-    averageScore: 95
-  },
-  {
-    id: 6,
-    fullName: "Emily Davis",
-    currentInterviewStep: "2",
-    applicationId: 106,
-    averageScore: 87
+    averageScore: 3.5
   }
 ];
 
