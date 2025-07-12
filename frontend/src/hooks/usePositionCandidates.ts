@@ -1,6 +1,6 @@
 // Custom hook for fetching position candidates
 
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { fetchCandidates } from '../services/mockPositionService';
 import { CandidateApiResponse } from '../types/kanban';
 
@@ -16,7 +16,7 @@ export const usePositionCandidates = (positionId: number): UsePositionCandidates
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       setLoading(true);
       setError(null);
@@ -28,13 +28,13 @@ export const usePositionCandidates = (positionId: number): UsePositionCandidates
     } finally {
       setLoading(false);
     }
-  };
+  }, [positionId]);
 
   useEffect(() => {
     if (positionId) {
       fetchData();
     }
-  }, [positionId]); // fetchData is stable but eslint doesn't know that
+  }, [positionId, fetchData]); // Include fetchData dependency
 
   const refetch = () => {
     fetchData();
