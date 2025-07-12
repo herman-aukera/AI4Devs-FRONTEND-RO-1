@@ -1,0 +1,94 @@
+/* Kanban Board Styles */
+
+.kanban-board {
+  background-color: #f8f9fa;
+  min-height: calc(100vh - 120px);
+}
+
+.kanban-column {
+  min-height: 500px;
+  transition: all 0.2s ease;
+}
+
+.kanban-column.column-over {
+  transform: scale(1.02);
+  box-shadow: 0 0.5rem 1rem rgba(0, 123, 255, 0.2) !important;
+}
+
+.kanban-column-body {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.kanban-column-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Candidate Card Styles */
+.candidate-card {
+  cursor: grab;
+  transition: all 0.2s ease;
+  border: 1px solid #dee2e6;
+}
+
+.candidate-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.15);
+}
+
+.candidate-card.dragging {
+  cursor: grabbing;
+  transform: rotate(5deg);
+}
+
+/* Responsive Design */
+@media (max-width: 767px) {
+  .kanban-board .row {
+    flex-direction: column;
+  }
+
+  .kanban-column-wrapper {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .kanban-column {
+    min-height: 300px;
+  }
+
+  .kanban-column-body {
+    max-height: 50vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .kanban-column-wrapper {
+    min-height: 500px;
+  }
+}
+
+/* Accessibility improvements */
+.candidate-card:focus {
+  outline: 2px solid #007bff;
+  outline-offset: 2px;
+}
+
+/* Loading and error states */
+.kanban-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
+.kanban-error {
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Score badge specific styles */
+.score-badge {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+}
