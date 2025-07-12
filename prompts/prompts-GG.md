@@ -1,21 +1,36 @@
 # 🎯 Prompts Optimizados para Claude - Implementación Kanban
 
-## 📋 Índice de Prompts
+## � Desglose de los Tres Prompts Optimizados
+
+### **Prompt 1: Implementación TDD del Frontend Kanban**
+Este prompt guiará la construcción completa del Kanban con React, siguiendo TDD y mejores prácticas de UX/UI.
+
+### **Prompt 2: Verificación Sistemática**
+Este prompt validará exhaustivamente todos los aspectos del Kanban construido, asegurando conformidad con requisitos.
+
+### **Prompt 3: Validación Final y PR**
+Este prompt finalizará el proceso, realizando pruebas finales y automatizando la creación del PR.
+
+A continuación, cada prompt está diseñado específicamente para aprovechar las capacidades de Claude con etiquetas XML/HTML:
+
+---
+
+## �📋 Índice de Prompts
 1. Prompt Principal de Implementación TDD
 2. Prompt de Verificación Sistemática
 3. Prompt Final de Validación y PR
 
 ## 🧭 Navegación Rápida
 
-| Prompt | Estado | Enlace Directo |
-|--------|--------|----------------|
-| **Prompt 1: Implementación TDD** | ✅ COMPLETADO | [🎯 Ir al Prompt 1](#-prompt-principal-de-implementación-tdd) |
-| **Prompt 2: Verificación Sistemática** | ✅ COMPLETADO | [🔍 Ir al Prompt 2](#-prompt-de-verificación-sistemática) |  
-| **Prompt 3: Validación Final y PR** | ✅ COMPLETADO | [🚀 Ir al Prompt 3](#-prompt-final-de-validación-y-pr) |
+| Prompt                                 | Estado       | Enlace Directo                                               |
+| -------------------------------------- | ------------ | ------------------------------------------------------------ |
+| **Prompt 1: Implementación TDD**       | ✅ COMPLETADO | [🎯 Ir al Prompt 1](#-prompt-principal-de-implementación-tdd) |
+| **Prompt 2: Verificación Sistemática** | ✅ COMPLETADO | [🔍 Ir al Prompt 2](#-prompt-de-verificación-sistemática)     |
+| **Prompt 3: Validación Final y PR**    | ✅ COMPLETADO | [🚀 Ir al Prompt 3](#-prompt-final-de-validación-y-pr)        |
 
 ### 📊 Resumen de Resultados
 - ✅ **Implementación**: Kanban funcional con todas las características
-- ✅ **Verificación**: Todas las verificaciones APROBADAS 
+- ✅ **Verificación**: Todas las verificaciones APROBADAS
 - ✅ **Validación Final**: Código limpio y optimizado
 - 🎯 **Recomendación**: APROBADO para Pull Request
 
@@ -50,10 +65,10 @@
   <role>
     Eres un equipo de élite compuesto por:
     - Arquitecto Frontend Senior especializado en React y TypeScript
-    - Experto UX/UI con enfoque en interfaces drag-and-drop 
+    - Experto UX/UI con enfoque en interfaces drag-and-drop
     - Maestro TDD para desarrollo frontend
     - Ingeniero de Prompts y flujos GitHub Copilot
-    
+
     Tu misión es implementar una interfaz Kanban para gestión de candidatos siguiendo TDD, con excelencia en UX/UI y código mantenible.
   </role>
 
@@ -90,7 +105,7 @@
       <task>Planificar estrategia de estado (Context API o Redux)</task>
       <task>Determinar componentes reutilizables y su jerarquía</task>
     </phase>
-    
+
     <phase name="TDD - Componentes Base">
       <task>Escribir tests para componente KanbanBoard</task>
       <task>Implementar KanbanBoard mínimo para pasar tests</task>
@@ -99,27 +114,27 @@
       <task>Escribir tests para componente CandidateCard</task>
       <task>Implementar CandidateCard mínimo para pasar tests</task>
     </phase>
-    
+
     <phase name="TDD - Integración API">
       <task>Escribir tests para hooks de integración API</task>
       <task>Implementar hooks para fetchInterviewFlow</task>
       <task>Implementar hooks para fetchCandidates</task>
       <task>Implementar función updateCandidateStage</task>
     </phase>
-    
+
     <phase name="TDD - Drag and Drop">
       <task>Escribir tests para funcionalidad drag-and-drop</task>
       <task>Implementar React DnD o biblioteca similar</task>
       <task>Añadir lógica de actualización al soltar tarjeta</task>
       <task>Implementar feedback visual durante arrastre</task>
     </phase>
-    
+
     <phase name="TDD - Responsive Design">
       <task>Escribir tests para comportamiento responsivo</task>
       <task>Implementar media queries y diseño adaptativo</task>
       <task>Optimizar para móvil (columnas verticales)</task>
     </phase>
-    
+
     <phase name="Refinamiento y UX">
       <task>Mejorar feedback visual (loaders, indicadores, transiciones)</task>
       <task>Implementar manejo de errores con mensajes amigables</task>
@@ -200,7 +215,7 @@
     - Auditor de accesibilidad web (WCAG)
     - Ingeniero de rendimiento frontend
     - Experto en pruebas de usabilidad
-    
+
     Tu misión es verificar sistemáticamente que la implementación Kanban cumple todos los requisitos técnicos y de experiencia de usuario.
   </role>
 
@@ -244,7 +259,7 @@
         <item>✓ La actualización de etapa persiste al recargar la página</item>
       </checklist>
     </phase>
-    
+
     <phase name="Integración API">
       <checklist>
         <item>✓ GET /positions/:id/interviewFlow se llama correctamente al cargar</item>
@@ -254,7 +269,7 @@
         <item>✓ Errores de API se manejan adecuadamente</item>
       </checklist>
     </phase>
-    
+
     <phase name="Diseño Responsivo">
       <checklist>
         <item>✓ Diseño de escritorio muestra columnas horizontalmente</item>
@@ -264,7 +279,7 @@
         <item>✓ Elementos interactivos tienen tamaño adecuado para táctil</item>
       </checklist>
     </phase>
-    
+
     <phase name="Calidad de Código">
       <checklist>
         <item>✓ Estructura de componentes sigue principios SOLID</item>
@@ -311,7 +326,7 @@
     - Revisor de código senior con experiencia en React
     - Especialista en documentación técnica
     - Experto en GitHub y gestión de pull requests
-    
+
     Tu misión es realizar una validación final exhaustiva, preparar la documentación adecuada y crear el pull request con GitHub CLI.
   </role>
 
@@ -390,13 +405,13 @@
       <requirement>Interfaces completas para props y estados</requirement>
       <requirement>Manejo correcto de tipos de API</requirement>
     </typescript>
-    
+
     <react>
       <requirement>Hooks optimizados con dependencias correctas</requirement>
       <requirement>Componentes memorizados cuando apropiado</requirement>
       <requirement>Props drilling minimizado</requirement>
     </react>
-    
+
     <testing>
       <requirement>Cobertura de funcionalidad crítica</requirement>
       <requirement>Tests que verifican comportamiento, no implementación</requirement>
@@ -433,7 +448,7 @@
 
       ## 🧪 Testing
       - **Tests Unitarios**: 12/12 passing
-      - **Build Production**: ✅ Successful  
+      - **Build Production**: ✅ Successful
       - **ESLint**: ✅ No warnings
       - **TypeScript**: ✅ Strict mode
 
@@ -464,9 +479,9 @@
 
   <execution-command>
     Por favor, ejecuta la validación final COMPLETA pero NO crear el pull request hasta recibir confirmación explícita. Muestra cada paso:
-    
+
     1. "Ejecutando pruebas finales exhaustivas..."
-    2. "Realizando limpieza y optimización del código..."  
+    2. "Realizando limpieza y optimización del código..."
     3. "Verificando calidad y estándares de producción..."
     4. "Preparando commit final y documentación..."
     5. "✋ LISTO PARA PR - Esperando tu confirmación para crear el pull request"
@@ -484,7 +499,7 @@
 - **Componentes**: KanbanBoard, CandidateCard, ScoreBadge + hooks personalizados
 - **Tests**: 12/12 tests passing con React Testing Library
 
-### **Prompt 2: Verificación Sistemática** - ✅ COMPLETADO  
+### **Prompt 2: Verificación Sistemática** - ✅ COMPLETADO
 - **Fecha**: 12 de julio, 2025
 - **Resultado**: Todas las verificaciones APROBADAS
 - **Categorías**: Funcionalidad, API, Responsividad, UX, Código
@@ -503,7 +518,7 @@
 **🏆 MISIÓN CUMPLIDA**: Interfaz Kanban implementada exitosamente con:
 
 - ✅ **Funcionalidad Completa**: Drag-and-drop, visualización por etapas, integración API
-- ✅ **Calidad Técnica**: 12 tests passing, TypeScript estricto, código optimizado  
+- ✅ **Calidad Técnica**: 12 tests passing, TypeScript estricto, código optimizado
 - ✅ **UX/UI Excelente**: Diseño responsivo, feedback visual, accesibilidad
 - ✅ **Rendimiento**: Hooks optimizados, bundle eficiente, carga rápida
 - ✅ **Documentación**: Prompts completos, arquitectura documentada
