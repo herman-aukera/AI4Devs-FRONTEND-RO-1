@@ -109,6 +109,17 @@ const AddCandidateForm = () => {
         } : null
       };
 
+      // Filter out empty educations and work experiences before sending
+      candidateData.educations = candidateData.educations.filter(education =>
+        education.institution && education.institution.trim() !== '' &&
+        education.title && education.title.trim() !== ''
+      );
+
+      candidateData.workExperiences = candidateData.workExperiences.filter(experience =>
+        experience.company && experience.company.trim() !== '' &&
+        experience.position && experience.position.trim() !== ''
+      );
+
       // Format date fields to ISO-8601 DateTime format for Prisma
       candidateData.educations = candidateData.educations.map(education => ({
         ...education,
@@ -150,8 +161,11 @@ const AddCandidateForm = () => {
 
         await createApplication(applicationData);
 
-        setSuccessMessage(`¡Éxito! Candidato ${candidateData.firstName} ${candidateData.lastName} añadido a la posición y aplicación creada. Será redirigido al Kanban en 3 segundos...`);
+        // Clear any previous error
         setError('');
+
+        // Set success message
+        setSuccessMessage(`¡Éxito! Candidato ${candidateData.firstName} ${candidateData.lastName} añadido a la posición y aplicación creada. Será redirigido al Kanban en 3 segundos...`);
 
         // Reset form after showing success message
         setTimeout(() => {
@@ -180,8 +194,9 @@ const AddCandidateForm = () => {
         throw new Error('Error al enviar datos del candidato');
       }
     } catch (error) {
+      console.error('Error creating candidate:', error);
+      setSuccessMessage(''); // Clear any success message
       setError('Error al añadir candidato: ' + error.message);
-      setSuccessMessage('');
     }
   };
 

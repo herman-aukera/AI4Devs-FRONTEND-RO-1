@@ -21,12 +21,65 @@ export interface Position {
   interviewFlow: InterviewFlow;
 }
 
+export interface Education {
+  id: number;
+  institution: string;
+  title: string;
+  startDate: string;
+  endDate?: string;
+}
+
+export interface WorkExperience {
+  id: number;
+  company: string;
+  position: string;
+  description?: string;
+  startDate: string;
+  endDate?: string;
+}
+
+export interface Resume {
+  id: number;
+  filePath: string;
+  fileType: string;
+}
+
+export interface Interview {
+  interviewDate: string;
+  interviewStep: {
+    name: string;
+  };
+  notes?: string;
+  score?: number;
+}
+
+export interface Application {
+  id: number;
+  positionId: number;
+  position: {
+    id: number;
+    title: string;
+  };
+  currentInterviewStep: number;
+  notes?: string;
+  interviews: Interview[];
+}
+
 export interface Candidate {
   id: number;
   fullName: string;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+  address?: string;
   currentInterviewStep: string;
   averageScore: number;
   applicationId?: number;
+  educations?: Education[];
+  workExperiences?: WorkExperience[];
+  resumes?: Resume[];
+  applications?: Application[];
 }
 
 export interface KanbanColumn {

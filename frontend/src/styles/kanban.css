@@ -42,6 +42,24 @@
   transform: rotate(5deg);
 }
 
+/* Enhanced interaction styles */
+.candidate-card .card-body {
+  position: relative;
+}
+
+.candidate-card .btn-outline-primary {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.candidate-card:hover .btn-outline-primary {
+  opacity: 1;
+}
+
+.candidate-card .btn-outline-primary:hover {
+  transform: scale(1.1);
+}
+
 /* Responsive Design */
 @media (max-width: 767px) {
   .kanban-board .row {

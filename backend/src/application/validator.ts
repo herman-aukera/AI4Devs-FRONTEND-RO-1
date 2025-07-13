@@ -6,7 +6,9 @@ const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
 //Length validations according to the database schema
 
 const validateName = (name: string) => {
+  console.log('Validating name:', JSON.stringify(name), 'Type:', typeof name, 'Length:', name ? name.length : 'undefined');
   if (!name || name.length < 2 || name.length > 100 || !NAME_REGEX.test(name)) {
+    console.error('Name validation failed. Name:', JSON.stringify(name), 'Regex test:', NAME_REGEX.test(name));
     throw new Error('Invalid name');
   }
 };

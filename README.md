@@ -1,8 +1,35 @@
 # LTI - Talent Tracking System
 
-This project is a full-stack application with a React frontend and an Express backend using Prisma as an ORM. The frontend is initiated with Create React App, and the backend is written in TypeScript.
+🚀 **Sistema de seguimiento de talento completo y mejorado** con React frontend y Express backend usando Prisma ORM.
 
-## Directory and File Explanation
+## ✨ **Nuevas Funcionalidades Implementadas**
+
+### 🎯 **Modal de Detalles del Candidato**
+- **Tarjetas clickeables** en el Kanban board
+- **Modal enriquecido** que muestra información completa del candidato:
+  - 👤 Información personal (email, teléfono, dirección)
+  - 🎓 Historial educativo detallado con fechas
+  - 💼 Experiencia laboral completa
+  - 📝 Aplicaciones a posiciones con progreso
+  - 🎯 Puntuaciones y notas de entrevistas
+  - 📄 CVs adjuntos
+
+### 🛠️ **Mejoras del Sistema**
+- ✅ **Bucle infinito resuelto** en procesamiento de educaciones
+- ✅ **Validaciones mejoradas** de nombres y campos
+- ✅ **Procesamiento seguro** de arrays de educación/experiencia
+- ✅ **Límites de seguridad** (máximo 10 educaciones/experiencias)
+- ✅ **Manejo robusto de errores** con logs detallados
+- ✅ **Success banners** funcionando correctamente
+
+### 🎨 **Mejoras de UX/UI**
+- 🖱️ **Hover effects** en tarjetas del kanban
+- 👁️ **Botón de vista** que aparece al hacer hover
+- 📱 **Diseño responsive** mejorado
+- ⚡ **Carga optimizada** de datos del candidato
+- 🎭 **Animaciones suaves** para interacciones
+
+## 📁 **Estructura del Proyecto**
 
 - `backend/`: Contains the server-side code written in Node.js.
   - `src/`: Contains the source code for the backend.
@@ -287,7 +314,7 @@ npx prisma migrate dev
 ts-node seed.ts
 ```
 
-Una vez has dado todos los pasos, deberías poder guardar nuevos candidatos, tanto via web, como via API, verlos en la base de datos y obtenerlos mediante GET por id. 
+Una vez has dado todos los pasos, deberías poder guardar nuevos candidatos, tanto via web, como via API, verlos en la base de datos y obtenerlos mediante GET por id.
 
 ```
 POST http://localhost:3010/candidates
@@ -319,6 +346,55 @@ POST http://localhost:3010/candidates
         "fileType": "application/pdf"
     }
 }
+`````
+
+## 🧪 **Cómo Probar las Nuevas Funcionalidades**
+
+### 1. **Crear Candidatos con Información Completa**
+```bash
+# Candidato con educación y experiencia laboral
+curl -X POST http://localhost:3010/candidates \
+  -H "Content-Type: application/json" \
+  -d '{
+    "firstName": "María",
+    "lastName": "González",
+    "email": "maria.gonzalez@example.com",
+    "phone": "612345678",
+    "address": "Calle Principal 123",
+    "educations": [{
+      "institution": "Universidad Complutense",
+      "title": "Ingeniería Informática",
+      "startDate": "2018-01-01T00:00:00.000Z",
+      "endDate": "2022-01-01T00:00:00.000Z"
+    }],
+    "workExperiences": [{
+      "company": "TechCorp",
+      "position": "Desarrollador Frontend",
+      "description": "Desarrollo de aplicaciones React",
+      "startDate": "2022-03-01T00:00:00.000Z",
+      "endDate": "2024-01-01T00:00:00.000Z"
+    }]
+  }'
 ```
 
+### 2. **Probar el Modal de Detalles**
+1. Navega al Kanban board en `http://localhost:3000`
+2. Busca las tarjetas de candidatos
+3. **Haz hover** sobre una tarjeta - aparecerá el botón 👁️
+4. **Haz click** en el botón 👁️ para abrir el modal de detalles
+5. Explora toda la información: educación, experiencia, aplicaciones
 
+### 3. **Verificar API de Detalles**
+```bash
+# Obtener información completa de un candidato
+curl -X GET "http://localhost:3010/candidates/[ID]" | jq .
+```
+
+### 🎯 **Funcionalidades para Probar**
+- ✅ **Drag & Drop** - Mueve candidatos entre columnas
+- ✅ **Modal de detalles** - Click en 👁️ para ver información completa
+- ✅ **Creación de candidatos** - Formulario completo con educación/experiencia
+- ✅ **Validaciones** - Prueba nombres con números (debe fallar)
+- ✅ **Success messages** - Verifica mensajes de éxito al crear candidatos
+
+## 🚀 **Instalación y Configuración**

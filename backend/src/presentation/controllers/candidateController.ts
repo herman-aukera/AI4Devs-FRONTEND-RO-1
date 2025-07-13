@@ -4,6 +4,7 @@ import { addCandidate, findCandidateById, updateCandidateStage } from '../../app
 export const addCandidateController = async (req: Request, res: Response) => {
   try {
     const candidateData = req.body;
+    console.log('Received candidate data:', JSON.stringify(candidateData, null, 2));
     const candidate = await addCandidate(candidateData);
     res.status(201).json({ message: 'Candidate added successfully', data: candidate });
   } catch (error: unknown) {
