@@ -1,42 +1,111 @@
 # 🎯 Prompts Optimizados para Claude - Implementación Kanban
 
-## � Desglose de los Tres Prompts Optimizados
+| ## 📚                                   | Prompt           | Prompt                                                                 | Propósito           | Enlace Directo |
+| -------------------------------------- | ---------------- | ---------------------------------------------------------------------- |
+| **Prompt 0: Setup Inicial**            | 🔧 CONFIGURACIÓN  | [🔧 Ir al Setup Inicial](#prompt-0-setup)                               |
+| **Prompt 1: Kanban Básico**            | 🎯 IMPLEMENTACIÓN | [🎯 Ir al Kanban Básico](#prompt-1-basico)                              |
+| **Prompt 2: Verificación Básica**      | 🔍 TESTING        | [🔍 Ir a Verificación Básica](#prompt-2-basico)                         |
+| **Prompt 3: Entrega Final**            | 📤 DELIVERY       | [📤 Ir a Entrega Final](#prompt-3-basico)                               |                     | Estado         | Enlace Directo |
+| -------------------------------------- | ------------     | ---------------------------------------------------------------------- |
+| **Prompt 1: Implementación TDD**       | ✅ COMPLETADO     | [🎯 Ir al Prompt 1 Expandido](#prompt-1-expandido)                      |
+| **Prompt 2: Verificación Sistemática** | ✅ COMPLETADO     | [🔍 Ir al Prompt 2 Expandido](#prompt-2-expandido)                      |
+| **Prompt 3: Validación Final y PR**    | ✅ COMPLETADO     | [🚀 Ir al Prompt 3 Expandido](#prompt-3-expandido)                      | BLA DE CONTENIDOS** |
 
-### **Prompt 1: Implementación TDD del Frontend Kanban**
-Este prompt guiará la construcción completa del Kanban con React, siguiendo TDD y mejores prácticas de UX/UI.
+### 🚀 **PROMPTS EXPANDIDOS** (Sistema Completo)
+- [🎯 Prompt 1: Implementación TDD](#prompt-1-expandido)
+- [🔍 Prompt 2: Verificación Sistemática](#prompt-2-expandido)
+- [🚀 Prompt 3: Validación Final y PR](#prompt-3-expandido)
 
-### **Prompt 2: Verificación Sistemática**
-Este prompt validará exhaustivamente todos los aspectos del Kanban construido, asegurando conformidad con requisitos.
+### 📝 **PROMPTS SIMPLIFICADOS** (Ejercicio Original)
+- [🔧 Prompt 0: Setup Inicial](#prompt-0-setup)
+- [🎯 Prompt 1: Kanban Básico](#prompt-1-basico)
+- [🔍 Prompt 2: Verificación Básica](#prompt-2-basico)
+- [📤 Prompt 3: Entrega Final](#prompt-3-basico)
 
-### **Prompt 3: Validación Final y PR**
-Este prompt finalizará el proceso, realizando pruebas finales y automatizando la creación del PR.
 
-A continuación, cada prompt está diseñado específicamente para aprovechar las capacidades de Claude con etiquetas XML/HTML:
+---
+
+## � Desglose de los Dos Tipos de Prompts
+
+### 🚀 **PROMTS EXPANDIDOS** - Sistema Completo Implementado
+Estos prompts documentan el ### 🚀 **¿Quieres usar el SISTEMA EXPANDIDO?**
+**Úsalo si ya tienes el código implementado y quieres documentarlo o mejorarlo:**
+- [🎯 Ir al Prompt 1 Expandido](#prompt-1-expandido)
+- [🔍 Ir al Prompt 2 Expandido](#prompt-2-expandido)
+- [🚀 Ir al Prompt 3 Expandido](#prompt-3-expandido)
+
+### 📝 **¿Quieres empezar DESDE CERO con el ejercicio original?**
+**Úsalo si empiezas de cero y quieres cumplir exactamente con los requisitos básicos:**
+- [🔧 Paso 0: Setup Inicial](#prompt-0-setup)
+- [🎯 Paso 1: Kanban Básico](#prompt-1-basico)
+- [🔍 Paso 2: Verificación](#prompt-2-basico)
+- [📤 Paso 3: Entrega](#prompt-3-basico)
+
+### 📊 **¿Quieres ver el resumen del trabajo realizado?**
+- [📋 Ver Estado de Implementación](#estado-de-implementación)
+- [🎯 Ver Resumen Ejecutivo](#resumen-ejecutivo) que ya está funcionando con características extra como Dashboard, modal de detalles, star rating, etc.
+
+### 📝 **PROMPTS SIMPLIFICADOS** - Ejercicio Original Básico
+Estos prompts te permiten implementar EXACTAMENTE lo solicitado en el ejercicio original, sin funcionalidades extra.
+
+---
+
+---
+
+## 🚀 **PROMPTS EXPANDIDOS**
+### (Sistema Completo Implementado con Funcionalidades Avanzadas)
 
 ---
 
 ## �📋 Índice de Prompts
+
+### 🚀 **PROMPTS EXPANDIDOS** (Sistema Completo Implementado)
 1. Prompt Principal de Implementación TDD
 2. Prompt de Verificación Sistemática
 3. Prompt Final de Validación y PR
 
+### 📝 **PROMTS SIMPLIFICADOS** (Ejercicio Original Básico)
+0. Prompt Setup Inicial
+1. Prompt Kanban Básico
+2. Prompt Verificación Básica
+3. Prompt Entrega Final
+
 ## 🧭 Navegación Rápida
 
-| Prompt                                 | Estado       | Enlace Directo                                               |
-| -------------------------------------- | ------------ | ------------------------------------------------------------ |
-| **Prompt 1: Implementación TDD**       | ✅ COMPLETADO | [🎯 Ir al Prompt 1](#-prompt-principal-de-implementación-tdd) |
-| **Prompt 2: Verificación Sistemática** | ✅ COMPLETADO | [🔍 Ir al Prompt 2](#-prompt-de-verificación-sistemática)     |
-| **Prompt 3: Validación Final y PR**    | ✅ COMPLETADO | [🚀 Ir al Prompt 3](#-prompt-final-de-validación-y-pr)        |
+### 🚀 **PROMPTS EXPANDIDOS** (Para sistema completo)
 
-### 📊 Resumen de Resultados
-- ✅ **Implementación**: Kanban funcional con todas las características
+| Prompt                                 | Estado       | Enlace Directo                                                        |
+| -------------------------------------- | ------------ | --------------------------------------------------------------------- |
+| **Prompt 1: Implementación TDD**       | ✅ COMPLETADO | [🎯 Ir al Prompt 1 Expandido](#prompt-principal-de-implementación-tdd) |
+| **Prompt 2: Verificación Sistemática** | ✅ COMPLETADO | [🔍 Ir al Prompt 2 Expandido](#prompt-de-verificación-sistemática)     |
+| **Prompt 3: Validación Final y PR**    | ✅ COMPLETADO | [🚀 Ir al Prompt 3 Expandido](#prompt-final-de-validación-y-pr)        |
+
+### 📝 **PROMTS SIMPLIFICADOS** (Para ejercicio original básico)
+
+| Prompt                            | Propósito        | Enlace Directo                                                               |
+| --------------------------------- | ---------------- | ---------------------------------------------------------------------------- |
+| **Prompt 0: Setup Inicial**       | 🔧 CONFIGURACIÓN  | [🔧 Ir al Setup Inicial](#prompt-0-setup-inicial-requerido)                   |
+| **Prompt 1: Kanban Básico**       | 🎯 IMPLEMENTACIÓN | [🎯 Ir al Kanban Básico](#prompt-1-simplificado-implementación-kanban-básico) |
+| **Prompt 2: Verificación Básica** | 🔍 TESTING        | [🔍 Ir a Verificación Básica](#prompt-2-simplificado-verificación-básica)     |
+| **Prompt 3: Entrega Final**       | 📤 DELIVERY       | [📤 Ir a Entrega Final](#prompt-3-simplificado-entrega)                       |
+
+### 📊 Resumen de Estado
+
+#### 🚀 **SISTEMA EXPANDIDO** (Implementado y Funcionando)
+- ✅ **Implementación**: Kanban funcional con todas las características avanzadas
 - ✅ **Verificación**: Todas las verificaciones APROBADAS
 - ✅ **Validación Final**: Código limpio y optimizado
-- 🎯 **Recomendación**: APROBADO para Pull Request
+- 🎯 **Estado**: COMPLETADO - Sistema en producción
+
+#### 📝 **EJERCICIO ORIGINAL BÁSICO** (Promts Simplificados)
+- 🔧 **Setup**: Configuración del entorno desde cero
+- 🎯 **Kanban**: Implementación mínima según requisitos
+- 🔍 **Testing**: Verificación de requisitos básicos
+- 📤 **Entrega**: Pull request según especificaciones
 
 ---
 
-## 🎯 Prompt Principal de Implementación TDD
+## 🎯 Prompt Principal de Implementación TDD {#prompt-1-expandido}
 
 ```xml
 <prompt type="frontend-development" model="claude-4" date="2025-07-12">
@@ -58,6 +127,15 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
       </endpoint>
       <endpoint method="PUT" path="/candidates/:id/stage">
         Actualiza la etapa de un candidato específico
+      </endpoint>
+      <endpoint method="GET" path="/candidates/:id">
+        CRÍTICO: Retorna información COMPLETA del candidato incluyendo educaciones, experiencias laborales, aplicaciones, CVs y notas de entrevistas
+      </endpoint>
+      <endpoint method="POST" path="/candidates">
+        CRÍTICO: Crea candidato con validaciones robustas, manejo de arrays de educación/experiencia, límites de seguridad (max 10 items)
+      </endpoint>
+      <endpoint method="GET" path="/positions">
+        CRÍTICO: Lista todas las posiciones disponibles para dropdown de selección
       </endpoint>
     </apis>
   </context>
@@ -85,6 +163,12 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
       <requirement>Tarjetas de candidatos en sus fases correspondientes mostrando nombre y puntuación</requirement>
       <requirement>Funcionalidad drag-and-drop para mover candidatos entre fases</requirement>
       <requirement>Diseño responsivo (móvil: fases verticales ocupando todo el ancho)</requirement>
+      <requirement>CRÍTICO: Tarjetas clickeables con modal de detalles completos del candidato</requirement>
+      <requirement>CRÍTICO: Modal enriquecido mostrando educación, experiencia, aplicaciones, CVs</requirement>
+      <requirement>CRÍTICO: Hover effects en tarjetas con botón de vista (👁️)</requirement>
+      <requirement>CRÍTICO: Sistema de star rating (1-5 estrellas) en formulario de candidatos</requirement>
+      <requirement>CRÍTICO: Validaciones robustas y manejo de errores null-safe</requirement>
+      <requirement>CRÍTICO: Auto-navegación después de crear candidatos (3s delay)</requirement>
     </requirements>
   </objectives>
 
@@ -98,13 +182,13 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
       5. Manejas casos límite y errores
     </instruction>
   </chain-of-thought>
-
   <workflow>
     <phase name="Análisis y Planificación">
       <task>Examinar las API disponibles y su estructura de datos</task>
       <task>Diseñar arquitectura de componentes React para Kanban</task>
       <task>Planificar estrategia de estado (Context API o Redux)</task>
       <task>Determinar componentes reutilizables y su jerarquía</task>
+      <task>CRÍTICO: Planificar modal de detalles y estructura de datos completa</task>
     </phase>
 
     <phase name="TDD - Componentes Base">
@@ -112,15 +196,18 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
       <task>Implementar KanbanBoard mínimo para pasar tests</task>
       <task>Escribir tests para componente KanbanColumn</task>
       <task>Implementar KanbanColumn mínimo para pasar tests</task>
-      <task>Escribir tests para componente CandidateCard</task>
-      <task>Implementar CandidateCard mínimo para pasar tests</task>
+      <task>Escribir tests para componente CandidateCard CON HOVER</task>
+      <task>Implementar CandidateCard CON BOTÓN DE VISTA</task>
+      <task>CRÍTICO: Implementar CandidateDetailModal completo</task>
     </phase>
 
     <phase name="TDD - Integración API">
-      <task>Escribir tests para hooks de integración API</task>
+      <task>CRÍTICO: Implementar manejo NULL-SAFE en todos los componentes</task>
       <task>Implementar hooks para fetchInterviewFlow</task>
       <task>Implementar hooks para fetchCandidates</task>
       <task>Implementar función updateCandidateStage</task>
+      <task>CRÍTICO: Implementar getCandidateById para modal de detalles</task>
+      <task>CRÍTICO: Implementar validaciones robustas en creación de candidatos</task>
     </phase>
 
     <phase name="TDD - Drag and Drop">
@@ -128,6 +215,21 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
       <task>Implementar React DnD o biblioteca similar</task>
       <task>Añadir lógica de actualización al soltar tarjeta</task>
       <task>Implementar feedback visual durante arrastre</task>
+    </phase>
+
+    <phase name="CRÍTICO - UX Enhancement">
+      <task>Implementar star rating system (1-5 estrellas)</task>
+      <task>Implementar hover effects en tarjetas</task>
+      <task>Implementar auto-navegación con delay de 3s</task>
+      <task>Implementar success messages y feedback visual</task>
+      <task>Implementar animaciones suaves</task>
+    </phase>
+
+    <phase name="CRÍTICO - Bug Prevention">
+      <task>Implementar validaciones anti-bucle infinito</task>
+      <task>Implementar límites de seguridad (max 10 educaciones/experiencias)</task>
+      <task>Implementar manejo robusto de arrays</task>
+      <task>Implementar componentes null-safe (ScoreBadge)</task>
     </phase>
 
     <phase name="TDD - Responsive Design">
@@ -146,43 +248,59 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
 
   <component-structure>
     <component name="Pages">
-      <file path="src/pages/PositionDetail.tsx">Página principal Kanban</file>
+      <file path="src/pages/PositionDetail.tsx">CRÍTICO: Página principal Kanban con integración completa</file>
+      <file path="src/components/RecruiterDashboard.js">Dashboard principal con estadísticas en tiempo real</file>
     </component>
     <component name="Components">
-      <file path="src/components/kanban/KanbanBoard.tsx">Contenedor principal Kanban</file>
-      <file path="src/components/kanban/KanbanColumn.tsx">Columna individual para fase</file>
-      <file path="src/components/kanban/CandidateCard.tsx">Tarjeta de candidato</file>
-      <file path="src/components/common/PageHeader.tsx">Encabezado con título y flecha atrás</file>
-      <file path="src/components/common/ScoreBadge.tsx">Insignia de puntuación</file>
+      <file path="src/components/kanban/KanbanBoard.tsx">Contenedor principal Kanban con drag-and-drop</file>
+      <file path="src/components/kanban/KanbanColumn.tsx">Columna individual para cada fase del proceso</file>
+      <file path="src/components/kanban/CandidateCard.tsx">CRÍTICO: Tarjeta de candidato CON HOVER EFFECTS y botón vista</file>
+      <file path="src/components/kanban/CandidateDetailModal.tsx">CRÍTICO: Modal de detalles completos del candidato</file>
+      <file path="src/components/common/PageHeader.tsx">Encabezado con título y flecha atrás para navegación</file>
+      <file path="src/components/common/ScoreBadge.tsx">CRÍTICO: Insignia de puntuación NULL-SAFE (maneja undefined)</file>
+      <file path="src/components/AddCandidateForm.js">CRÍTICO: Formulario mejorado con star rating y validaciones robustas</file>
+      <file path="src/components/Positions.tsx">CRÍTICO: Lista de posiciones con navegación al Kanban</file>
+      <file path="src/components/FileUploader.js">Componente para subida de archivos (CVs)</file>
     </component>
     <component name="Hooks">
-      <file path="src/hooks/usePositionFlow.ts">Hook para obtener flujo de entrevista</file>
-      <file path="src/hooks/usePositionCandidates.ts">Hook para obtener candidatos</file>
-      <file path="src/hooks/useUpdateCandidateStage.ts">Hook para actualizar etapa</file>
+      <file path="src/hooks/usePositionFlow.ts">Hook para obtener flujo de entrevista desde API</file>
+      <file path="src/hooks/usePositionCandidates.ts">Hook para obtener candidatos por posición</file>
+      <file path="src/hooks/useUpdateCandidateStage.ts">Hook para actualizar etapa de candidato</file>
+      <file path="src/hooks/useDashboard.ts">CRÍTICO: Hook para estadísticas del dashboard</file>
     </component>
-    <component name="Context">
-      <file path="src/context/KanbanContext.tsx">Contexto para estado global Kanban</file>
+    <component name="Services">
+      <file path="src/services/apiService.ts">CRÍTICO: Servicio API consolidado con todos los 6 endpoints</file>
+      <file path="src/services/candidateService.js">CRÍTICO: Servicio específico con getCandidateById para modal</file>
     </component>
     <component name="Types">
-      <file path="src/types/kanban.ts">Tipos e interfaces para Kanban</file>
+      <file path="src/types/kanban.ts">CRÍTICO: Tipos expandidos para candidato completo con educación/experiencia</file>
+    </component>
+    <component name="Styles">
+      <file path="src/styles/kanban.css">CRÍTICO: Estilos para hover effects, animaciones y responsive design</file>
     </component>
     <component name="Tests">
-      <file path="src/tests/KanbanBoard.test.tsx">Tests para KanbanBoard</file>
-      <file path="src/tests/KanbanColumn.test.tsx">Tests para KanbanColumn</file>
-      <file path="src/tests/CandidateCard.test.tsx">Tests para CandidateCard</file>
-      <file path="src/tests/usePositionFlow.test.ts">Tests para hooks de API</file>
+      <file path="src/tests/ScoreBadge.test.tsx">CRÍTICO: Tests para componente null-safe</file>
+      <file path="src/tests/CandidateCard.test.tsx">Tests para hover effects y modal</file>
+      <file path="src/tests/KanbanBoard.test.tsx">Tests para drag-and-drop</file>
     </component>
   </component-structure>
 
   <deliverables>
     <files>
-      <file path="frontend/src/pages/PositionDetail.tsx">Página principal Kanban</file>
-      <file path="frontend/src/components/kanban/*">Componentes Kanban</file>
-      <file path="frontend/src/hooks/*">Hooks para API integration</file>
-      <file path="frontend/src/tests/*">Tests unitarios e integración</file>
+      <file path="frontend/src/pages/PositionDetail.tsx">CRÍTICO: Página principal Kanban con navegación</file>
+      <file path="frontend/src/components/kanban/*">CRÍTICO: Componentes Kanban completos (Board, Column, Card, Modal)</file>
+      <file path="frontend/src/components/common/*">CRÍTICO: Componentes comunes (PageHeader, ScoreBadge null-safe)</file>
+      <file path="frontend/src/hooks/*">Hooks para integración API (4 hooks implementados)</file>
+      <file path="frontend/src/services/*">Servicios API consolidados</file>
+      <file path="frontend/src/types/*">Tipos TypeScript expandidos</file>
+      <file path="frontend/src/styles/*">Estilos responsive y animaciones</file>
+      <file path="frontend/src/tests/*">Tests unitarios (12/12 passing)</file>
+      <file path="frontend/src/components/AddCandidateForm.js">CRÍTICO: Formulario con star rating y validaciones</file>
+      <file path="frontend/src/components/Positions.tsx">CRÍTICO: Lista de posiciones con navegación</file>
+      <file path="frontend/src/components/RecruiterDashboard.js">Dashboard con estadísticas tiempo real</file>
     </files>
     <documentation>
-      <file path="prompts/prompts-GG.md">Documentación de prompting</file>
+      <file path="prompts/prompts-GG.md">Documentación completa de prompting y arquitectura</file>
     </documentation>
     <branch>frontend-GG</branch>
   </deliverables>
@@ -195,7 +313,7 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
 
 ---
 
-## 🔍 Prompt de Verificación Sistemática
+## 🔍 Prompt de Verificación Sistemática {#prompt-2-expandido}
 
 ```xml
 <prompt type="verification" model="claude-4" date="2025-07-12">
@@ -259,6 +377,23 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
         <item>✓ Las tarjetas de candidatos muestran nombre completo y puntuación</item>
         <item>✓ Drag-and-drop funciona para mover candidatos entre columnas</item>
         <item>✓ La actualización de etapa persiste al recargar la página</item>
+        <item>✓ CRÍTICO: Tarjetas muestran hover effects al pasar mouse</item>
+        <item>✓ CRÍTICO: Botón de vista (👁️) aparece en hover</item>
+        <item>✓ CRÍTICO: Click en botón abre modal de detalles</item>
+        <item>✓ CRÍTICO: Modal muestra información completa del candidato</item>
+      </checklist>
+    </phase>
+
+    <phase name="Modal de Detalles CRÍTICO">
+      <checklist>
+        <item>✓ Modal muestra información personal completa</item>
+        <item>✓ Modal muestra lista de educaciones con fechas</item>
+        <item>✓ Modal muestra experiencia laboral con descripciones</item>
+        <item>✓ Modal muestra historial de aplicaciones</item>
+        <item>✓ Modal muestra puntuaciones de entrevistas</item>
+        <item>✓ Modal muestra CVs adjuntos si existen</item>
+        <item>✓ Modal se cierra correctamente</item>
+        <item>✓ Modal es responsivo</item>
       </checklist>
     </phase>
 
@@ -267,8 +402,26 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
         <item>✓ GET /positions/:id/interviewFlow se llama correctamente al cargar</item>
         <item>✓ GET /positions/:id/candidates se llama correctamente al cargar</item>
         <item>✓ PUT /candidates/:id/stage se llama al mover un candidato</item>
+        <item>✓ CRÍTICO: GET /candidates/:id se llama al abrir modal de detalles</item>
+        <item>✓ CRÍTICO: POST /candidates maneja validaciones robustas</item>
+        <item>✓ CRÍTICO: GET /positions funciona para dropdown de selección</item>
         <item>✓ Datos de API se procesan y muestran correctamente</item>
         <item>✓ Errores de API se manejan adecuadamente</item>
+        <item>✓ CRÍTICO: Componentes son null-safe (ScoreBadge maneja undefined)</item>
+      </checklist>
+    </phase>
+
+    <phase name="Formulario de Candidatos CRÍTICO">
+      <checklist>
+        <item>✓ Star rating system (1-5 estrellas) funciona</item>
+        <item>✓ Dropdown de posiciones carga datos reales</item>
+        <item>✓ Validaciones de nombres funcionan (sin números)</item>
+        <item>✓ Formularios dinámicos de educación funcionan</item>
+        <item>✓ Formularios dinámicos de experiencia laboral funcionan</item>
+        <item>✓ Límites de seguridad (max 10 items) implementados</item>
+        <item>✓ Success message aparece al crear candidato</item>
+        <item>✓ Auto-navegación a kanban después de 3 segundos</item>
+        <item>✓ Manejo anti-bucle infinito implementado</item>
       </checklist>
     </phase>
 
@@ -279,6 +432,19 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
         <item>✓ Elementos se adaptan proporcionalmente a diferentes tamaños</item>
         <item>✓ No hay desbordamiento horizontal en ningún tamaño</item>
         <item>✓ Elementos interactivos tienen tamaño adecuado para táctil</item>
+        <item>✓ CRÍTICO: Modal es responsivo en móvil</item>
+        <item>✓ CRÍTICO: Hover effects funcionan en desktop</item>
+      </checklist>
+    </phase>
+
+    <phase name="Bug Prevention CRÍTICO">
+      <checklist>
+        <item>✓ No hay bucles infinitos en procesamiento de arrays</item>
+        <item>✓ Validaciones de nombres no rompen campos descriptivos</item>
+        <item>✓ ScoreBadge maneja valores null/undefined sin crash</item>
+        <item>✓ Arrays se procesan de forma segura sin mutación</item>
+        <item>✓ Límites de seguridad previenen arrays masivos</item>
+        <item>✓ Backend y frontend se pueden iniciar sin conflictos</item>
       </checklist>
     </phase>
 
@@ -289,6 +455,8 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
         <item>✓ Tests unitarios cubren lógica crítica</item>
         <item>✓ Convenciones de código consistentes</item>
         <item>✓ Sin código duplicado o muerto</item>
+        <item>✓ CRÍTICO: Tipos expandidos para candidato completo</item>
+        <item>✓ CRÍTICO: Servicios API consolidados</item>
       </checklist>
     </phase>
   </verification-protocol>
@@ -307,7 +475,7 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
 
 ---
 
-## 🚀 Prompt Final de Validación y PR
+## 🚀 Prompt Final de Validación y PR {#prompt-3-expandido}
 
 ```xml
 <prompt type="validation-pr" model="claude-4" date="2025-07-12">
@@ -367,6 +535,21 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
         <item>✓ Verificar integración con todos los endpoints</item>
         <item>✓ Confirmar diseño responsivo en múltiples breakpoints</item>
         <item>✓ Verificar accesibilidad básica</item>
+        <item>✓ CRÍTICO: Verificar modal de detalles funciona completamente</item>
+        <item>✓ CRÍTICO: Verificar hover effects en tarjetas</item>
+        <item>✓ CRÍTICO: Verificar star rating system</item>
+        <item>✓ CRÍTICO: Verificar auto-navegación después de crear candidatos</item>
+      </checklist>
+    </phase>
+
+    <phase name="Bug Prevention Final">
+      <checklist>
+        <item>✓ Verificar ScoreBadge no crashea con valores null</item>
+        <item>✓ Verificar formularios no crean bucles infinitos</item>
+        <item>✓ Verificar límites de seguridad en arrays</item>
+        <item>✓ Verificar validaciones robustas funcionan</item>
+        <item>✓ Verificar backend inicia sin conflictos</item>
+        <item>✓ Verificar frontend conecta correctamente</item>
       </checklist>
     </phase>
 
@@ -378,6 +561,7 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
         <item>✓ Asegurar consistencia de estilos y formateo</item>
         <item>✓ Eliminar archivos temporales o no utilizados</item>
         <item>✓ Resolver todas las advertencias de ESLint</item>
+        <item>✓ CRÍTICO: Verificar todos los tipos TypeScript están completos</item>
       </checklist>
     </phase>
 
@@ -388,6 +572,7 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
         <item>✓ Optimizar importaciones (tree-shaking)</item>
         <item>✓ Verificar tamaño del bundle de producción</item>
         <item>✓ Asegurar manejo eficiente de errores</item>
+        <item>✓ CRÍTICO: Verificar componentes null-safe</item>
       </checklist>
     </phase>
 
@@ -397,6 +582,7 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
         <item>✓ Verificar que todos los cambios estén incluidos</item>
         <item>✓ Actualizar documentación si es necesario</item>
         <item>✓ Preparar descripción detallada del PR</item>
+        <item>✓ CRÍTICO: Incluir todas las características implementadas</item>
         <item>✓ **ESPERAR confirmación antes de crear PR**</item>
       </checklist>
     </phase>
@@ -437,32 +623,60 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
       # 🎯 Implementación de Interfaz Kanban para Gestión de Candidatos
 
       ## 📋 Descripción
-      Implementación completa de una interfaz Kanban responsiva para la gestión de candidatos en procesos de contratación. Incluye funcionalidad drag-and-drop, integración con API backend, y diseño adaptativo.
+      Implementación completa de una interfaz Kanban responsiva para la gestión de candidatos en procesos de contratación. Incluye funcionalidad drag-and-drop, modal de detalles completos, integración con API backend, y diseño adaptativo con UX enriquecida.
 
-      ## ✅ Características Implementadas
+      ## ✅ Características Principales Implementadas
       - ✅ Interfaz Kanban con columnas por etapas del proceso
       - ✅ Tarjetas de candidatos con nombre y puntuación
       - ✅ Drag-and-drop funcional entre columnas
+      - ✅ **CRÍTICO**: Modal de detalles completos del candidato
+      - ✅ **CRÍTICO**: Hover effects en tarjetas con botón de vista (👁️)
+      - ✅ **CRÍTICO**: Star rating system (1-5 estrellas) en formularios
+      - ✅ **CRÍTICO**: Auto-navegación después de crear candidatos (3s delay)
       - ✅ Diseño responsivo (móvil/escritorio)
-      - ✅ Integración completa con APIs backend
-      - ✅ Manejo de estados de carga y error
-      - ✅ Tests unitarios (12/12 passing)
-      - ✅ Optimización de rendimiento con hooks
+      - ✅ Integración completa con APIs backend (6 endpoints)
 
-      ## 🧪 Testing
+      ## 🔧 Características Técnicas Avanzadas
+      - ✅ **Componentes null-safe**: ScoreBadge maneja valores undefined
+      - ✅ **Validaciones robustas**: Anti-bucle infinito, límites de seguridad
+      - ✅ **Formularios dinámicos**: Educación y experiencia laboral
+      - ✅ **Manejo de errores**: Success messages y feedback visual
+      - ✅ **Optimización**: useCallback/useMemo donde apropiado
+      - ✅ **Tipos TypeScript**: Interfaces completas para candidato expandido
+
+      ## 📊 API Integration
+      - GET /positions/:id/interviewFlow - Flujo de entrevista
+      - GET /positions/:id/candidates - Candidatos por posición
+      - PUT /candidates/:id/stage - Actualizar etapa candidato
+      - **GET /candidates/:id** - Detalles completos candidato (MODAL)
+      - **POST /candidates** - Crear candidato con validaciones
+      - **GET /positions** - Lista posiciones (dropdown)
+
+      ## 🧪 Testing y Calidad
       - **Tests Unitarios**: 12/12 passing
       - **Build Production**: ✅ Successful
       - **ESLint**: ✅ No warnings
       - **TypeScript**: ✅ Strict mode
+      - **Bug Prevention**: Verificado anti-crash en componentes
 
       ## 📱 Responsive Design
-      - **Desktop**: Columnas horizontales con scroll
-      - **Mobile**: Columnas verticales full-width
+      - **Desktop**: Columnas horizontales con scroll y hover effects
+      - **Mobile**: Columnas verticales full-width, modal adaptativo
       - **Breakpoints**: 768px, 1024px optimizados
 
+      ## 🎨 UX/UI Enhancements
+      - **Hover Effects**: Botón de vista aparece al pasar mouse
+      - **Modal Responsivo**: Información completa del candidato
+      - **Star Rating**: Sistema visual de puntuación 1-5 estrellas
+      - **Success Feedback**: Messages y auto-navegación
+      - **Smooth Animations**: Transiciones suaves
+
       ## 🔧 Tecnologías
-      - React 18 + TypeScript
+      - React 18 + TypeScript (strict mode)
       - @dnd-kit/core para drag-and-drop
+      - CSS Modules + Responsive Design
+      - Custom hooks para API integration
+      - Defensive programming patterns
       - Bootstrap para UI responsive
       - React Testing Library para tests
 
@@ -494,89 +708,204 @@ A continuación, cada prompt está diseñado específicamente para aprovechar la
 
 ---
 
-## 📋 Estado de Implementación
+## 📝 **PROMTS SIMPLIFICADOS**
+### (Para cumplir EXACTAMENTE con el ejercicio original desde cero)
 
-### **Prompt 1: Implementación TDD** - ✅ COMPLETADO
-- **Fecha**: 12-13 de julio, 2025
-- **Resultado**: Sistema completo de gestión de candidatos implementado
-- **Componentes**: KanbanBoard, CandidateCard, ScoreBadge, AddCandidateForm, RecruiterDashboard
-- **Características**: Kanban drag-and-drop + Formulario mejorado con star rating + Dashboard
-- **Backend**: API completamente funcional con PostgreSQL
-
-### **Prompt 2: Verificación Sistemática** - ✅ COMPLETADO
-- **Fecha**: 13 de julio, 2025
-- **Resultado**: Sistema validado y bugs críticos corregidos
-- **Fixes Aplicados**: ScoreBadge null-safe, backend running, APIs funcionando
-- **Categorías**: ✅ Funcionalidad, ✅ API Integration, ✅ Bug Fixes, ✅ UX Enhancement
-- **Recomendación**: APROBADO para producción
-
-### **Prompt 3: Validación Final y PR** - ✅ COMPLETADO
-- **Fecha**: 13 de julio, 2025
-- **Estado**: Sistema totalmente funcional y validado
-- **Frontend**: ✅ React app running on localhost:3000
-- **Backend**: ✅ API server running on localhost:3010
-- **Database**: ✅ PostgreSQL connected via Docker
-- **Próximo paso**: ✋ **ESPERANDO CONFIRMACIÓN PARA CREAR PULL REQUEST**
-
-## 🎯 **VALIDACIÓN FINAL COMPLETADA**
-
-### ✅ **Resumen de Sistema Implementado**
-- **🎯 Kanban Board**: ✅ Interfaz completa con drag-and-drop funcional
-- **⭐ Star Rating System**: ✅ Evaluación de candidatos (1-5 estrellas)
-- **📋 Position Selection**: ✅ Dropdown dinámico con datos reales de API
-- **✉️ Enhanced Feedback**: ✅ Mensajes detallados + auto-navegación (3s)
-- **� Live Dashboard**: ✅ Estadísticas en tiempo real
-- **� Bug Fixes Critical**: ✅ ScoreBadge null-safe, backend running
-
-### ✅ **Validación Técnica**
-- **�️ Frontend**: ✅ React app running on http://localhost:3000
-- **⚙️ Backend**: ✅ API server running on http://localhost:3010
-- **�️ Database**: ✅ PostgreSQL connected and functional
-- **🔌 API Integration**: ✅ All endpoints tested and working
-- **📱 Responsive Design**: ✅ Mobile and desktop optimized
-- **🐛 Error Handling**: ✅ Null-safe components, graceful failures
-
-### ✅ **Funcionalidades Validadas**
-- **📋 Positions List**: ✅ Carga correcta desde /positions endpoint
-- **🎯 Kanban Flow**: ✅ /position/{id}/interviewflow working
-- **👥 Candidates Display**: ✅ /position/{id}/candidates loading correctly
-- **⚡ Drag & Drop**: ✅ Stage updates via PUT /candidates/{id}/stage
-- **⭐ Rating System**: ✅ Star ratings integrated in add candidate form
-- **🔄 Navigation**: ✅ Complete flow: Dashboard → Positions → Kanban
-
-### ✅ **Performance y Calidad**
-- **� Load Times**: ✅ Frontend boots in <3s, API responses <500ms
-- **🧪 Error Recovery**: ✅ Graceful handling of null/undefined data
-- **💾 Data Persistence**: ✅ Real database integration with Prisma ORM
-- **🎨 UX Polish**: ✅ Loading states, success messages, intuitive navigation
+> **⚠️ IMPORTANTE**: Los prompts expandidos arriba implementan un sistema AVANZADO con funcionalidades extra.
+> **Para cumplir EXACTAMENTE con el ejercicio original desde cero, usa estos 4 prompts simplificados:**
 
 ---
 
-## 🎯 Resumen Ejecutivo
+## 🔧 Prompt 0: Setup Inicial (REQUERIDO) {#prompt-0-setup}
 
-**🏆 MISIÓN CUMPLIDA**: Sistema completo de gestión de candidatos implementado exitosamente con:
+```xml
+<prompt type="setup-inicial" model="claude-4" date="2025-07-13">
+  <context>
+    <repository>
+      <original>LIDR-academy/AI4Devs-FRONTEND-RO-1</original>
+      <branch>frontend-[iniciales]</branch>
+    </repository>
+    <ejercicio-original>
+      Crear interfaz Kanban para gestión de candidatos en posiciones laborales.
+      REQUISITOS MÍNIMOS según ejercicio:
+      1. Vista Kanban con drag-and-drop entre columnas
+      2. Mostrar candidatos como tarjetas con nombre y puntuación
+      3. Título de posición con flecha de navegación
+      4. Diseño responsivo para móvil
+      5. Integración con 3 endpoints API específicos
+    </ejercicio-original>
+  </context>
 
-- ✅ **Funcionalidad Completa**: Kanban drag-and-drop, creación de candidatos, dashboard en tiempo real
-- ✅ **UX/UI Excepcional**: Star ratings, selección de posiciones, feedback mejorado, auto-navegación
-- ✅ **Calidad Técnica**: Frontend + Backend funcionando, integración real con PostgreSQL
-- ✅ **Performance Optimizado**: Carga rápida, componentes null-safe, manejo de errores
-- ✅ **Bug Fixes Críticos**: ScoreBadge corregido, APIs funcionando, conexión estable
+  <role>
+    Eres un desarrollador frontend especializado en React que debe configurar un proyecto desde cero para cumplir exactamente con los requisitos del ejercicio.
+  </role>
 
-**🚀 ESTADO ACTUAL - COMPLETAMENTE FUNCIONAL**:
-- **Frontend**: ✅ React app running on http://localhost:3000
-- **Backend**: ✅ API server running on http://localhost:3010
-- **Database**: ✅ PostgreSQL connected with real data
-- **Integration**: ✅ Full-stack communication working perfectly
+  <tasks>
+    <task>Analizar el repositorio base y estructura existente</task>
+    <task>Configurar entorno de desarrollo (frontend + backend)</task>
+    <task>Instalar dependencias mínimas necesarias</task>
+    <task>Configurar base de datos si es necesario</task>
+    <task>Verificar que APIs funcionan correctamente</task>
+    <task>Crear estructura básica para la página Kanban</task>
+  </tasks>
 
-**📋 CARACTERÍSTICAS PRINCIPALES**:
-- 🎯 **Kanban Board**: Visualización y gestión drag-and-drop de candidatos por etapas
-- ⭐ **Star Rating System**: Evaluación inicial de candidatos (1-5 estrellas)
-- 📋 **Position Selection**: Dropdown dinámico con posiciones reales del backend
-- ✉️ **Enhanced Feedback**: Mensajes detallados + auto-navegación a Kanban (3s)
-- 📊 **Live Dashboard**: Estadísticas en tiempo real de candidatos y posiciones
-- 📱 **Responsive Design**: Optimizado para móvil y escritorio
-- 🔧 **Production Ready**: Error handling, null-safe components, real API integration
+  <apis-requeridas>
+    <endpoint method="GET" path="/positions/:id/interviewFlow">
+      Retorna nombre de posición y etapas del proceso
+    </endpoint>
+    <endpoint method="GET" path="/positions/:id/candidates">
+      Retorna candidatos con nombre, etapa actual y puntuación
+    </endpoint>
+    <endpoint method="PUT" path="/candidates/:id/stage">
+      Actualiza la etapa de un candidato
+    </endpoint>
+  </apis-requeridas>
 
-**🎉 RESULTADO FINAL**: El sistema está completamente implementado, validado y funcionando. Tanto el frontend como el backend están corriendo y comunicándose correctamente. Todas las funcionalidades críticas han sido implementadas y testeadas.
+  <execution-command>
+    Configura el entorno de desarrollo y verifica que todo funcione correctamente antes de comenzar la implementación.
+  </execution-command>
+</prompt>
+```
 
-El código está listo para crear el Pull Request final.
+---
+
+## 🎯 Prompt 1 SIMPLIFICADO: Implementación Kanban Básico {#prompt-1-basico}
+
+```xml
+<prompt type="kanban-basico" model="claude-4" date="2025-07-13">
+  <context>
+    <repository>
+      <branch>frontend-[iniciales]</branch>
+    </repository>
+    <ejercicio-requirements>
+      Implementar ÚNICAMENTE la vista Kanban según especificaciones del ejercicio original.
+      NO agregar funcionalidades extra no solicitadas.
+    </ejercicio-requirements>
+  </context>
+
+  <role>
+    Eres un desarrollador React que implementa exactamente lo solicitado, sin over-engineering.
+  </role>
+
+  <requirements-minimos>
+    <requirement>Título de posición en parte superior con flecha para volver</requirement>
+    <requirement>Columnas para cada fase del proceso de contratación</requirement>
+    <requirement>Tarjetas de candidatos mostrando nombre y puntuación</requirement>
+    <requirement>Drag-and-drop para mover candidatos entre fases</requirement>
+    <requirement>Diseño responsivo (móvil: columnas verticales)</requirement>
+  </requirements-minimos>
+
+  <componentes-basicos>
+    <file path="src/pages/PositionDetail.tsx">Página principal Kanban</file>
+    <file path="src/components/KanbanBoard.tsx">Contenedor principal</file>
+    <file path="src/components/KanbanColumn.tsx">Columna de fase</file>
+    <file path="src/components/CandidateCard.tsx">Tarjeta de candidato</file>
+    <file path="src/components/PageHeader.tsx">Encabezado con navegación</file>
+  </componentes-basicos>
+
+  <apis-integration>
+    <endpoint method="GET" path="/positions/:id/interviewFlow">Cargar etapas</endpoint>
+    <endpoint method="GET" path="/positions/:id/candidates">Cargar candidatos</endpoint>
+    <endpoint method="PUT" path="/candidates/:id/stage">Actualizar etapa</endpoint>
+  </apis-integration>
+
+  <execution-command>
+    Implementa ÚNICAMENTE el Kanban básico según los requisitos del ejercicio. NO agregues funcionalidades extra.
+  </execution-command>
+</prompt>
+```
+
+---
+
+## 🔍 Prompt 2 SIMPLIFICADO: Verificación Básica {#prompt-2-basico}
+
+```xml
+<prompt type="verificacion-basica" model="claude-4" date="2025-07-13">
+  <context>
+    <ejercicio-original>
+      Verificar que la implementación cumple EXACTAMENTE con los requisitos mínimos del ejercicio.
+    </ejercicio-original>
+  </context>
+
+  <role>
+    Eres un QA que verifica que se cumplan los requisitos exactos del ejercicio, sin validar funcionalidades extra.
+  </role>
+
+  <checklist-basico>
+    <item>✓ Vista Kanban muestra título de posición</item>
+    <item>✓ Flecha de navegación funciona</item>
+    <item>✓ Columnas se crean según etapas del proceso</item>
+    <item>✓ Tarjetas muestran nombre y puntuación</item>
+    <item>✓ Drag-and-drop funciona entre columnas</item>
+    <item>✓ Cambios persisten al recargar</item>
+    <item>✓ Diseño responsivo en móvil</item>
+    <item>✓ APIs funcionan correctamente</item>
+  </checklist-basico>
+
+  <execution-command>
+    Verifica ÚNICAMENTE los requisitos mínimos del ejercicio. Reporta si está listo para entrega.
+  </execution-command>
+</prompt>
+```
+
+---
+
+## 📤 Prompt 3 SIMPLIFICADO: Entrega {#prompt-3-basico}
+
+```xml
+<prompt type="entrega-final" model="claude-4" date="2025-07-13">
+  <context>
+    <deliverable>
+      Pull request con implementación Kanban según ejercicio original
+    </deliverable>
+  </context>
+
+  <role>
+    Eres un desarrollador preparando la entrega final del ejercicio según especificaciones.
+  </role>
+
+  <entregables-requeridos>
+    <file path="/frontend/*">Código de la vista Kanban</file>
+    <file path="/prompts/prompts-iniciales.md">Archivo de prompts usado</file>
+    <branch>frontend-[iniciales]</branch>
+    <pull-request>Con descripción del ejercicio completado</pull-request>
+  </entregables-requeridos>
+
+  <execution-command>
+    Prepara la entrega final con pull request según especificaciones del ejercicio.
+  </execution-command>
+</prompt>
+```
+
+---
+
+## 🗺️ **NAVEGACIÓN RÁPIDA**
+
+### 🚀 **¿Quieres usar el SISTEMA EXPANDIDO?**
+**Úsalo si ya tienes el código implementado y quieres documentarlo o mejorarlo:**
+- [🎯 Ir al Prompt 1 Expandido](#-prompt-principal-de-implementación-tdd)
+- [🔍 Ir al Prompt 2 Expandido](#-prompt-de-verificación-sistemática)
+- [🚀 Ir al Prompt 3 Expandido](#-prompt-final-de-validación-y-pr)
+
+### 📝 **¿Quieres empezar DESDE CERO con el ejercicio original?**
+**Úsalo si empiezas de cero y quieres cumplir exactamente con los requisitos básicos:**
+- [🔧 Paso 0: Setup Inicial](#-prompt-0-setup-inicial-requerido)
+- [🎯 Paso 1: Kanban Básico](#-prompt-1-simplificado-implementación-kanban-básico)
+- [🔍 Paso 2: Verificación](#-prompt-2-simplificado-verificación-básica)
+- [📤 Paso 3: Entrega](#-prompt-3-simplificado-entrega)
+
+### 📊 **¿Quieres ver el resumen del trabajo realizado?**
+- [📋 Ver Estado de Implementación](#estado-de-implementación)
+- [🎯 Ver Resumen Ejecutivo](#resumen-ejecutivo)
+
+---
+
+## 🎯 **RECOMENDACIÓN DE USO**
+
+**🔥 Si empiezas DESDE CERO**: Usa los **PROMTS SIMPLIFICADOS** (0→1→2→3)
+
+**📈 Si quieres EXPANDIR tu proyecto**: Usa los **PROMTS EXPANDIDOS** (1→2→3)
+
+**📚 Si quieres ESTUDIAR la implementación**: Lee toda la documentación
+
+---

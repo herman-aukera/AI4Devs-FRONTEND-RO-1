@@ -10,9 +10,9 @@ describe('ScoreBadge', () => {
     expect(screen.getByTestId('score-badge')).toHaveTextContent('⭐ 4.5');
   });
 
-  test('shows N/A for zero score', () => {
+  test('shows 0.0 for zero score', () => {
     render(<ScoreBadge score={0} />);
-    expect(screen.getByTestId('score-badge')).toHaveTextContent('⭐ N/A');
+    expect(screen.getByTestId('score-badge')).toHaveTextContent('⭐ 0.0');
   });
 
   test('applies correct variant for high score', () => {

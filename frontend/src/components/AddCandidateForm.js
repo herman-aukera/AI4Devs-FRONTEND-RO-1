@@ -77,8 +77,17 @@ const AddCandidateForm = () => {
   };
 
   const handleAddSection = (section) => {
+    // Límite de seguridad: máximo 10 items por sección
+    if (candidate[section].length >= 10) {
+      setError(`Máximo 10 ${section === 'educations' ? 'educaciones' : 'experiencias laborales'} permitidas`);
+      return;
+    }
+
     const newSection = section === 'educations' ? { institution: '', title: '', startDate: '', endDate: '' } : { company: '', position: '', description: '', startDate: '', endDate: '' };
     setCandidate({ ...candidate, [section]: [...candidate[section], newSection] });
+
+    // Clear any previous error
+    setError('');
   };
 
   const handleRemoveSection = (index, section) => {

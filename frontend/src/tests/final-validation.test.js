@@ -63,7 +63,7 @@ describe('🚀 FINAL SYSTEM VALIDATION', () => {
       expect(screen.getByLabelText(/apellido/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/correo electrónico/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/teléfono/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/fecha de nacimiento/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/dirección/i)).toBeInTheDocument();
       expect(screen.getByRole('button', { name: /enviar/i })).toBeInTheDocument();
     });
   });
@@ -79,7 +79,7 @@ describe('🚀 FINAL SYSTEM VALIDATION', () => {
       // Verify input types
       expect(screen.getByLabelText(/correo electrónico/i)).toHaveAttribute('type', 'email');
       expect(screen.getByLabelText(/teléfono/i)).toHaveAttribute('type', 'tel');
-      expect(screen.getByLabelText(/fecha de nacimiento/i)).toHaveAttribute('type', 'date');
+      expect(screen.getByLabelText(/dirección/i)).toHaveAttribute('type', 'text');
     });
 
     test('should have submit button enabled', () => {
