@@ -4,20 +4,22 @@ import React from 'react';
 import { Badge } from 'react-bootstrap';
 
 interface ScoreBadgeProps {
-  score: number;
+  score: number | null | undefined;
   className?: string;
 }
 
 export const ScoreBadge: React.FC<ScoreBadgeProps> = ({ score, className = '' }) => {
-  const getVariant = (score: number): string => {
+  const getVariant = (score: number | null | undefined): string => {
+    if (score === null || score === undefined || isNaN(score)) return 'secondary';
     if (score >= 4) return 'success';
     if (score >= 3) return 'warning';
     if (score >= 2) return 'secondary';
     return 'danger';
   };
 
-  const formatScore = (score: number): string => {
-    return score === 0 ? 'N/A' : score.toFixed(1);
+  const formatScore = (score: number | null | undefined): string => {
+    if (score === null || score === undefined || isNaN(score)) return 'N/A';
+    return score === 0 ? '0.0' : score.toFixed(1);
   };
 
   return (

@@ -74,7 +74,7 @@ export interface Candidate {
   phone?: string;
   address?: string;
   currentInterviewStep: string;
-  averageScore: number;
+  averageScore: number | null | undefined;
   applicationId?: number;
   educations?: Education[];
   workExperiences?: WorkExperience[];
@@ -122,7 +122,7 @@ export interface PositionApiResponse {
 export interface CandidateApiResponse {
   fullName: string;
   currentInterviewStep: string;
-  averageScore: number;
+  averageScore: number | null | undefined;
   id: number;
   applicationId: number;
 }
