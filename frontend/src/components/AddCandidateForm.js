@@ -1,11 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Alert, Button, Card, Col, Container, Form, FormControl, Row } from 'react-bootstrap';
-import { Trash } from 'react-bootstrap-icons';
+import { Star, StarFill, Trash } from 'react-bootstrap-icons';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { useNavigate } from 'react-router-dom';
+import { createApplication, fetchPositions } from '../services/apiService';
 import FileUploader from './FileUploader';
+import { PageHeader } from './common/PageHeader';
 
 const AddCandidateForm = () => {
+  const navigate = useNavigate();
   const [candidate, setCandidate] = useState({
     firstName: '',
     lastName: '',
@@ -14,10 +18,47 @@ const AddCandidateForm = () => {
     address: '',
     educations: [],
     workExperiences: [],
-    cv: null
+    cv: null,
+    positionId: '', // Selected position
+    rating: 0 // Star rating (0-5)
   });
+  const [positions, setPositions] = useState([]);
   const [error, setError] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+
+  // Load available positions
+  useEffect(() => {
+    const loadPositions = async () => {
+      try {
+        const positionsData = await fetchPositions();
+        setPositions(positionsData);
+      } catch (error) {
+        console.error('Error loading positions:', error);
+        setError('Failed to load available positions');
+      }
+    };
+    loadPositions();
+  }, []);
+
+  // Star rating component
+  const StarRating = ({ rating, onRatingChange }) => {
+    return (
+      <div className="d-flex align-items-center gap-1">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <button
+            key={star}
+            type="button"
+            className="btn btn-link p-0 text-warning"
+            onClick={() => onRatingChange(star)}
+            style={{ border: 'none', background: 'none', fontSize: '1.2rem' }}
+          >
+            {star <= rating ? <StarFill /> : <Star />}
+          </button>
+        ))}
+        <span className="ms-2 text-muted">({rating}/5)</span>
+      </div>
+    );
+  };
 
   const handleInputChange = (e, index, section) => {
     const updatedSection = [...candidate[section]];
@@ -52,6 +93,13 @@ const AddCandidateForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Validate position selection
+    if (!candidate.positionId) {
+      setError('Por favor selecciona una posición para el candidato');
+      return;
+    }
+
     try {
       const candidateData = {
         ...candidate,
@@ -61,19 +109,20 @@ const AddCandidateForm = () => {
         } : null
       };
 
-      // Format date fields to YYYY-MM-DD before sending to the endpoint
+      // Format date fields to ISO-8601 DateTime format for Prisma
       candidateData.educations = candidateData.educations.map(education => ({
         ...education,
-        startDate: education.startDate ? education.startDate.toISOString().slice(0, 10) : '',
-        endDate: education.endDate ? education.endDate.toISOString().slice(0, 10) : ''
+        startDate: education.startDate ? new Date(education.startDate).toISOString() : null,
+        endDate: education.endDate ? new Date(education.endDate).toISOString() : null
       }));
       candidateData.workExperiences = candidateData.workExperiences.map(experience => ({
         ...experience,
-        startDate: experience.startDate ? experience.startDate.toISOString().slice(0, 10) : '',
-        endDate: experience.endDate ? experience.endDate.toISOString().slice(0, 10) : ''
+        startDate: experience.startDate ? new Date(experience.startDate).toISOString() : null,
+        endDate: experience.endDate ? new Date(experience.endDate).toISOString() : null
       }));
 
-      const res = await fetch('http://localhost:3010/candidates', {
+      // Create candidate first
+      const candidateResponse = await fetch('http://localhost:3010/candidates', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -81,13 +130,51 @@ const AddCandidateForm = () => {
         body: JSON.stringify(candidateData)
       });
 
-      if (res.status === 201) {
-        setSuccessMessage('Candidato añadido con éxito');
+      if (candidateResponse.status === 201) {
+        const candidateResult = await candidateResponse.json();
+
+        // Handle both response structures: { data: candidate } or just candidate
+        const candidateId = candidateResult.data?.id || candidateResult.id;
+
+        if (!candidateId) {
+          throw new Error('No se pudo obtener el ID del candidato creado');
+        }
+
+        // Create application for the selected position
+        const applicationData = {
+          positionId: parseInt(candidate.positionId),
+          candidateId: candidateId,
+          currentInterviewStep: 1, // Start at first interview step
+          rating: candidate.rating
+        };
+
+        await createApplication(applicationData);
+
+        setSuccessMessage(`¡Éxito! Candidato ${candidateData.firstName} ${candidateData.lastName} añadido a la posición y aplicación creada. Será redirigido al Kanban en 3 segundos...`);
         setError('');
-      } else if (res.status === 400) {
-        const errorData = await res.json();
+
+        // Reset form after showing success message
+        setTimeout(() => {
+          setCandidate({
+            firstName: '',
+            lastName: '',
+            email: '',
+            phone: '',
+            address: '',
+            educations: [],
+            workExperiences: [],
+            cv: null,
+            positionId: '',
+            rating: 0
+          });
+
+          // Navigate to the position's Kanban after successful creation
+          navigate(`/positions/${candidate.positionId}`);
+        }, 3000);
+      } else if (candidateResponse.status === 400) {
+        const errorData = await candidateResponse.json();
         throw new Error('Datos inválidos: ' + errorData.message);
-      } else if (res.status === 500) {
+      } else if (candidateResponse.status === 500) {
         throw new Error('Error interno del servidor');
       } else {
         throw new Error('Error al enviar datos del candidato');
@@ -100,7 +187,10 @@ const AddCandidateForm = () => {
 
   return (
     <Container className="mt-5">
-      <h1 className="mb-4">Agregar Candidato</h1>
+      <PageHeader
+        title="Agregar Candidato"
+        onBackClick={() => navigate('/')}
+      />
       <Card className="shadow p-4">
         <Form onSubmit={handleSubmit}>
           <Row>
@@ -153,21 +243,56 @@ const AddCandidateForm = () => {
                   className="form-control shadow-sm"
                 />
               </Form.Group>
+
+              <Form.Group controlId="positionId" className="mt-3">
+                <Form.Label>Posición a la que aplica <span className="text-danger">*</span></Form.Label>
+                <Form.Control
+                  as="select"
+                  name="positionId"
+                  required
+                  value={candidate.positionId}
+                  onChange={(e) => setCandidate({ ...candidate, positionId: e.target.value })}
+                  className="form-control shadow-sm"
+                >
+                  <option value="">Selecciona una posición...</option>
+                  {positions.map((position) => (
+                    <option key={position.id} value={position.id}>
+                      {position.title}
+                    </option>
+                  ))}
+                </Form.Control>
+              </Form.Group>
+
+              <Form.Group controlId="rating" className="mt-3">
+                <Form.Label>Evaluación inicial</Form.Label>
+                <div className="mt-2">
+                  <StarRating
+                    rating={candidate.rating}
+                    onRatingChange={(rating) => setCandidate({ ...candidate, rating })}
+                  />
+                </div>
+                <Form.Text className="text-muted">
+                  Evalúa al candidato del 1 al 5 según tu primera impresión
+                </Form.Text>
+              </Form.Group>
             </Col>
             <Col md={6}>
               <Form.Group controlId="cv">
-                <Form.Label>CV</Form.Label>
+                <Form.Label>CV (Curriculum Vitae)</Form.Label>
                 <FileUploader
                   onChange={handleCVUpload}
                   onUpload={handleCVUpload}
                   className="shadow-sm"
                 />
+                <Form.Text className="text-muted">
+                  📎 Sube el CV del candidato en formato PDF o Word. Este archivo se guardará en el sistema para consultas futuras.
+                </Form.Text>
               </Form.Group>
               <Row className="mt-4">
                 <Button onClick={() => handleAddSection('educations')} className="btn btn-primary btn-sm mr-2">Añadir Educación</Button>
               </Row>
               {candidate.educations.map((education, index) => (
-                <div key={index} className="mb-3">
+                <div key={`education-${index}`} className="mb-3">
                   <Row className="mt-4">
                     <Col md={6}>
                       <FormControl
@@ -219,7 +344,7 @@ const AddCandidateForm = () => {
                 <Button onClick={() => handleAddSection('workExperiences')} className="btn btn-primary btn-sm mr-2">Añadir Experiencia Laboral</Button>
               </Row>
               {candidate.workExperiences.map((experience, index) => (
-                <div key={index} className="mb-3">
+                <div key={`experience-${index}`} className="mb-3">
                   <Row className="mt-4">
                     <Col md={6}>
                       <FormControl

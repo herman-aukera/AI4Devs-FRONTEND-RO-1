@@ -1,31 +1,51 @@
-import React from 'react';
-import { Button, Card, Col, Container, Form, Row } from 'react-bootstrap';
+import React, { useEffect, useState } from 'react';
+import { Alert, Button, Card, Col, Container, Form, Row, Spinner } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { PageHeader } from './common/PageHeader';
 
 type Position = {
     id: number;
     title: string;
-    manager: string;
-    deadline: string;
-    status: 'Abierto' | 'Contratado' | 'Cerrado' | 'Borrador';
+    description: string;
+    status: string;
+    location: string;
+    employmentType: string;
+    applicationDeadline: string;
 };
-
-const mockPositions: Position[] = [
-    { id: 1, title: 'Senior Backend Engineer', manager: 'John Doe', deadline: '2024-12-31', status: 'Abierto' },
-    { id: 2, title: 'Junior Android Engineer', manager: 'Jane Smith', deadline: '2024-11-15', status: 'Contratado' },
-    { id: 3, title: 'Product Manager', manager: 'Alex Jones', deadline: '2024-07-31', status: 'Borrador' }
-];
 
 const Positions: React.FC = () => {
     const navigate = useNavigate();
+    const [positions, setPositions] = useState<Position[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchPositions = async () => {
+            try {
+                setLoading(true);
+                const response = await fetch('http://localhost:3010/positions');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch positions');
+                }
+                const data = await response.json();
+                setPositions(data);
+            } catch (err) {
+                setError(err instanceof Error ? err.message : 'An error occurred');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPositions();
+    }, []);
 
     const getStatusBadgeClass = (status: string): string => {
         switch (status) {
-            case 'Abierto':
-                return 'bg-warning';
-            case 'Contratado':
+            case 'Open':
                 return 'bg-success';
-            case 'Borrador':
+            case 'Closed':
+                return 'bg-danger';
+            case 'Draft':
                 return 'bg-secondary';
             default:
                 return 'bg-warning';
@@ -36,9 +56,41 @@ const Positions: React.FC = () => {
         navigate(`/positions/${positionId}`);
     };
 
+    if (loading) {
+        return (
+            <Container className="mt-5">
+                <PageHeader
+                    title="Posiciones"
+                    onBackClick={() => navigate('/recruiter-dashboard')}
+                />
+                <div className="text-center py-4">
+                    <Spinner animation="border" />
+                    <p className="mt-2">Cargando posiciones...</p>
+                </div>
+            </Container>
+        );
+    }
+
+    if (error) {
+        return (
+            <Container className="mt-5">
+                <PageHeader
+                    title="Posiciones"
+                    onBackClick={() => navigate('/recruiter-dashboard')}
+                />
+                <Alert variant="danger">
+                    Error al cargar posiciones: {error}
+                </Alert>
+            </Container>
+        );
+    }
+
     return (
         <Container className="mt-5">
-            <h2 className="text-center mb-4">Posiciones</h2>
+            <PageHeader
+                title="Posiciones"
+                onBackClick={() => navigate('/recruiter-dashboard')}
+            />
             <Row className="mb-4">
                 <Col md={3}>
                     <Form.Control type="text" placeholder="Buscar por título" />
@@ -65,26 +117,36 @@ const Positions: React.FC = () => {
                 </Col>
             </Row>
             <Row>
-                {mockPositions.map((position) => (
-                    <Col md={4} key={position.id} className="mb-4">
-                        <Card className="shadow-sm">
-                            <Card.Body>
-                                <Card.Title>{position.title}</Card.Title>
-                                <Card.Text>
-                                    <strong>Manager:</strong> {position.manager}<br />
-                                    <strong>Deadline:</strong> {position.deadline}
+                {positions.map((position) => (
+                    <Col md={6} lg={4} key={position.id} className="mb-4">
+                        <Card className="h-100 shadow-sm">
+                            <Card.Body className="d-flex flex-column">
+                                <div className="d-flex justify-content-between align-items-start mb-3">
+                                    <Card.Title className="text-primary mb-0">{position.title}</Card.Title>
+                                    <span className={`badge ${getStatusBadgeClass(position.status)} ms-2`}>
+                                        {position.status}
+                                    </span>
+                                </div>
+                                <Card.Text className="text-muted mb-2 flex-grow-1">
+                                    {position.description}
                                 </Card.Text>
-                                <span className={`badge ${getStatusBadgeClass(position.status)} text-white`}>
-                                    {position.status}
-                                </span>
-                                <div className="d-flex justify-content-between mt-3">
+                                <div className="mb-3">
+                                    <small className="text-muted">
+                                        📍 {position.location} • {position.employmentType}
+                                    </small>
+                                    <br />
+                                    <small className="text-muted">
+                                        📅 Cierre: {new Date(position.applicationDeadline).toLocaleDateString()}
+                                    </small>
+                                </div>
+                                <div className="mt-auto">
                                     <Button
                                         variant="primary"
                                         onClick={() => handleViewProcess(position.id)}
+                                        className="w-100"
                                     >
-                                        Ver proceso
+                                        Ver Candidatos en Kanban
                                     </Button>
-                                    <Button variant="secondary">Editar</Button>
                                 </div>
                             </Card.Body>
                         </Card>
