@@ -8,6 +8,9 @@ import { createApplication, fetchPositions } from '../services/apiService';
 import FileUploader from './FileUploader';
 import { PageHeader } from './common/PageHeader';
 
+// Constantes de configuración
+const MAX_SECTION_ITEMS = 10;
+
 const AddCandidateForm = () => {
   const navigate = useNavigate();
   const [candidate, setCandidate] = useState({
@@ -77,9 +80,9 @@ const AddCandidateForm = () => {
   };
 
   const handleAddSection = (section) => {
-    // Límite de seguridad: máximo 10 items por sección
-    if (candidate[section].length >= 10) {
-      setError(`Máximo 10 ${section === 'educations' ? 'educaciones' : 'experiencias laborales'} permitidas`);
+    // Límite de seguridad: máximo MAX_SECTION_ITEMS items por sección
+    if (candidate[section].length >= MAX_SECTION_ITEMS) {
+      setError(`Máximo ${MAX_SECTION_ITEMS} ${section === 'educations' ? 'educaciones' : 'experiencias laborales'} permitidas`);
       return;
     }
 

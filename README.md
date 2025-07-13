@@ -346,7 +346,7 @@ POST http://localhost:3010/candidates
         "fileType": "application/pdf"
     }
 }
-`````
+```
 
 ## 🧪 **Cómo Probar las Nuevas Funcionalidades**
 
