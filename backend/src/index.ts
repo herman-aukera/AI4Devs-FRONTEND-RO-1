@@ -1,11 +1,11 @@
-import { Request, Response, NextFunction } from 'express';
-import express from 'express';
 import { PrismaClient } from '@prisma/client';
+import cors from 'cors';
 import dotenv from 'dotenv';
+import express, { NextFunction, Request, Response } from 'express';
+import { uploadFile } from './application/services/fileUploadService';
+import applicationRoutes from './routes/applicationRoutes';
 import candidateRoutes from './routes/candidateRoutes';
 import positionRoutes from './routes/positionRoutes';
-import { uploadFile } from './application/services/fileUploadService';
-import cors from 'cors';
 
 // Extender la interfaz Request para incluir prisma
 declare global {
@@ -40,11 +40,17 @@ app.use(cors({
 // Import and use candidateRoutes
 app.use('/candidates', candidateRoutes);
 
+// Route for applications
+app.use('/applications', applicationRoutes);
+
 // Route for file uploads
 app.post('/upload', uploadFile);
 
 // Route to get candidates by position
 app.use('/position', positionRoutes);
+
+// Route to get all positions
+app.use('/positions', positionRoutes);
 
 app.use((req, res, next) => {
   console.log(`${new Date().toISOString()} - ${req.method} ${req.path}`);

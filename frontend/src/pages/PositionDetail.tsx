@@ -2,13 +2,14 @@
 
 import React from 'react';
 import { Alert } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { PageHeader } from '../components/common/PageHeader';
 import { KanbanBoard } from '../components/kanban/KanbanBoard';
 import { usePositionFlow } from '../hooks/usePositionFlow';
 
 export const PositionDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
   const positionId = id ? parseInt(id, 10) : 0;
 
   const { data: flowData, error } = usePositionFlow(positionId);
@@ -16,7 +17,10 @@ export const PositionDetail: React.FC = () => {
   if (!id || isNaN(positionId)) {
     return (
       <div>
-        <PageHeader title="Error" />
+        <PageHeader
+          title="Error"
+          onBackClick={() => navigate('/positions')}
+        />
         <Alert variant="danger" className="mx-3">
           ID de posición inválido
         </Alert>
@@ -24,11 +28,14 @@ export const PositionDetail: React.FC = () => {
     );
   }
 
-  const positionTitle = flowData?.positionName || 'Cargando...';
+  const positionTitle = flowData?.interviewFlow?.positionName || 'Cargando...';
 
   return (
     <div className="position-detail-page">
-      <PageHeader title={positionTitle} />
+      <PageHeader
+        title={positionTitle}
+        onBackClick={() => navigate('/positions')}
+      />
 
       {error ? (
         <Alert variant="danger" className="mx-3">

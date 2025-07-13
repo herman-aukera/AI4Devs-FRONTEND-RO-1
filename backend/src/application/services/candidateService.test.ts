@@ -1,5 +1,5 @@
-import { updateCandidateStage } from './candidateService';
 import { PrismaClient } from '@prisma/client';
+import { updateCandidateStage } from './candidateService';
 
 const prisma = new PrismaClient();
 
@@ -22,6 +22,7 @@ describe('updateCandidateStage', () => {
       currentInterviewStep: 1,
       applicationDate: new Date(),
       notes: null,
+      rating: 0,
     };
 
     jest.spyOn(prisma.application, 'findFirst').mockResolvedValue(mockApplication);

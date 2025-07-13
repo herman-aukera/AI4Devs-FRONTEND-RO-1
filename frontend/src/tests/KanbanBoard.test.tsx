@@ -19,16 +19,18 @@ beforeEach(() => {
   // Reset mocks before each test
   mockUsePositionFlow.mockReturnValue({
     data: {
-      positionName: "Senior Backend Engineer",
       interviewFlow: {
-        id: 1,
-        description: "Technical Interview Process",
-        interviewSteps: [
-          { id: 1, interviewFlowId: 1, interviewTypeId: 1, name: "Llamada telefónica", orderIndex: 1 },
-          { id: 2, interviewFlowId: 1, interviewTypeId: 2, name: "Entrevista técnica", orderIndex: 2 },
-          { id: 3, interviewFlowId: 1, interviewTypeId: 3, name: "Entrevista cultural", orderIndex: 3 },
-          { id: 4, interviewFlowId: 1, interviewTypeId: 4, name: "Entrevista manager", orderIndex: 4 }
-        ]
+        positionName: "Senior Backend Engineer",
+        interviewFlow: {
+          id: 1,
+          description: "Technical Interview Process",
+          interviewSteps: [
+            { id: 1, interviewFlowId: 1, interviewTypeId: 1, name: "Llamada telefónica", orderIndex: 1 },
+            { id: 2, interviewFlowId: 1, interviewTypeId: 2, name: "Entrevista técnica", orderIndex: 2 },
+            { id: 3, interviewFlowId: 1, interviewTypeId: 3, name: "Entrevista cultural", orderIndex: 3 },
+            { id: 4, interviewFlowId: 1, interviewTypeId: 4, name: "Entrevista manager", orderIndex: 4 }
+          ]
+        }
       }
     },
     loading: false,

@@ -1,5 +1,5 @@
-import { getCandidatesByPositionService } from './positionService';
 import { PrismaClient } from '@prisma/client';
+import { getCandidatesByPositionService } from './positionService';
 
 const prisma = new PrismaClient();
 
@@ -22,6 +22,7 @@ describe('getCandidatesByPositionService', () => {
         applicationDate: new Date(),
         currentInterviewStep: 1,
         notes: null,
+        rating: 0,
         candidate: { firstName: 'John', lastName: 'Doe' },
         interviewStep: { name: 'Technical Interview' },
         interviews: [{ score: 5 }, { score: 3 }],
@@ -40,4 +41,3 @@ describe('getCandidatesByPositionService', () => {
     ]);
   });
 });
-

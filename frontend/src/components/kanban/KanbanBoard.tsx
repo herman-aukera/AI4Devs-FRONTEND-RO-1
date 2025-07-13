@@ -45,7 +45,11 @@ export const KanbanBoard: React.FC<KanbanBoardProps> = ({
   const columns: ColumnType[] = useMemo(() => {
     if (!flowData || !candidatesData) return [];
 
-    const sortedSteps = [...flowData.interviewFlow.interviewSteps].sort(
+    // Handle the nested structure of the API response
+    const interviewSteps = flowData.interviewFlow?.interviewFlow?.interviewSteps;
+    if (!interviewSteps || !Array.isArray(interviewSteps)) return [];
+
+    const sortedSteps = [...interviewSteps].sort(
       (a: any, b: any) => a.orderIndex - b.orderIndex
     );
 

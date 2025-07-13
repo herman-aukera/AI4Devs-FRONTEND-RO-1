@@ -48,21 +48,43 @@ async function main() {
 
   const position2 = await prisma.position.create({
     data: {
-      title: 'Data Scientist',
-      description: 'Analyze and interpret complex data.',
+      title: 'Junior Android Engineer',
+      description: 'Develop mobile applications for Android.',
       status: 'Open',
       isVisible: true,
       location: 'Remote',
-      jobDescription: 'Data analysis and machine learning',
+      jobDescription: 'Android mobile development',
+      companyId: company1.id,
+      interviewFlowId: interviewFlow1.id,
+      salaryMin: 40000,
+      salaryMax: 60000,
+      employmentType: 'Full-time',
+      benefits: 'Health insurance, 401k, Paid time off',
+      contactInfo: 'hr@lti.com',
+      requirements: '1+ years of experience in Android development, knowledge in Kotlin and Java',
+      responsibilities: 'Develop and maintain mobile applications for Android.',
+      companyDescription: 'LTI is a leading HR solutions provider.',
+      applicationDeadline: new Date('2024-12-31')
+    },
+  });
+
+  const position3 = await prisma.position.create({
+    data: {
+      title: 'Product Manager',
+      description: 'Lead product development and strategy.',
+      status: 'Open',
+      isVisible: true,
+      location: 'Remote',
+      jobDescription: 'Product management and strategy',
       companyId: company1.id,
       interviewFlowId: interviewFlow2.id,
-      salaryMin: 60000,
-      salaryMax: 90000,
+      salaryMin: 70000,
+      salaryMax: 100000,
       employmentType: 'Full-time',
       benefits: 'Health insurance, 401k, Paid time off, Stock options',
       contactInfo: 'hr@lti.com',
-      requirements: 'Master degree in Data Science or related field, proficiency in Python and R',
-      responsibilities: 'Analyze data sets to derive business insights and develop predictive models.',
+      requirements: '3+ years of experience in product management, MBA preferred',
+      responsibilities: 'Define product strategy and roadmap, work with engineering teams.',
       companyDescription: 'LTI is a leading HR solutions provider.',
       applicationDeadline: new Date('2024-12-31')
     },
@@ -189,6 +211,46 @@ async function main() {
     },
   });
 
+  const candidate4 = await prisma.candidate.create({
+    data: {
+      firstName: 'Gonzalo',
+      lastName: 'Gonzalez',
+      email: 'gonzalo.gonzalez@example.com',
+      phone: '5566778899',
+      address: '321 Oak Ave',
+      educations: {
+        create: [
+          {
+            institution: 'Universidad Nacional',
+            title: 'Ingeniería en Informática',
+            startDate: new Date('2018-01-01'),
+            endDate: new Date('2022-12-01'),
+          },
+        ],
+      },
+      workExperiences: {
+        create: [
+          {
+            company: 'StartupTech',
+            position: 'Junior Developer',
+            description: 'Desarrollo de aplicaciones web y móviles',
+            startDate: new Date('2023-01-01'),
+            endDate: new Date('2024-01-01'),
+          },
+        ],
+      },
+      resumes: {
+        create: [
+          {
+            filePath: '/resumes/gonzalo_gonzalez.pdf',
+            fileType: 'application/pdf',
+            uploadDate: new Date(),
+          },
+        ],
+      },
+    },
+  });
+
   // Create Interview Types
   const interviewType1 = await prisma.interviewType.create({
     data: {
@@ -211,9 +273,9 @@ async function main() {
     },
   });
 
-  
 
-  // Create Interview Steps
+
+  // Create Interview Steps for Flow 1
   const interviewStep1 = await prisma.interviewStep.create({
     data: {
       interviewFlowId: interviewFlow1.id,
@@ -236,8 +298,54 @@ async function main() {
     data: {
       interviewFlowId: interviewFlow1.id,
       interviewTypeId: interviewType3.id,
-      name: 'Manager Interview',
+      name: 'Cultural Fit',
+      orderIndex: 3,
+    },
+  });
+
+  const interviewStep4 = await prisma.interviewStep.create({
+    data: {
+      interviewFlowId: interviewFlow1.id,
+      interviewTypeId: interviewType1.id,
+      name: 'Final Interview',
+      orderIndex: 4,
+    },
+  });
+
+  // Create Interview Steps for Flow 2
+  const interviewStep5 = await prisma.interviewStep.create({
+    data: {
+      interviewFlowId: interviewFlow2.id,
+      interviewTypeId: interviewType1.id,
+      name: 'Initial Screening',
+      orderIndex: 1,
+    },
+  });
+
+  const interviewStep6 = await prisma.interviewStep.create({
+    data: {
+      interviewFlowId: interviewFlow2.id,
+      interviewTypeId: interviewType2.id,
+      name: 'Technical Assessment',
       orderIndex: 2,
+    },
+  });
+
+  const interviewStep7 = await prisma.interviewStep.create({
+    data: {
+      interviewFlowId: interviewFlow2.id,
+      interviewTypeId: interviewType3.id,
+      name: 'Cultural Fit',
+      orderIndex: 3,
+    },
+  });
+
+  const interviewStep8 = await prisma.interviewStep.create({
+    data: {
+      interviewFlowId: interviewFlow2.id,
+      interviewTypeId: interviewType1.id,
+      name: 'Manager Interview',
+      orderIndex: 4,
     },
   });
 
@@ -297,6 +405,32 @@ async function main() {
     },
   });
 
+  const application5 = await prisma.application.create({
+    data: {
+      positionId: position2.id,
+      candidateId: candidate4.id,
+      applicationDate: new Date(),
+      currentInterviewStep: interviewStep5.id,
+    },
+  });
+
+  const application6 = await prisma.application.create({
+    data: {
+      positionId: position3.id,
+      candidateId: candidate2.id,
+      applicationDate: new Date(),
+      currentInterviewStep: interviewStep6.id,
+    },
+  });
+
+  const application7 = await prisma.application.create({
+    data: {
+      positionId: position3.id,
+      candidateId: candidate3.id,
+      applicationDate: new Date(),
+      currentInterviewStep: interviewStep5.id,
+    },
+  });
 
   // Create Interviews
   await prisma.interview.createMany({

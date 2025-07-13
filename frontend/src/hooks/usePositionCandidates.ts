@@ -1,7 +1,7 @@
 // Custom hook for fetching position candidates
 
 import { useCallback, useEffect, useState } from 'react';
-import { fetchCandidates } from '../services/mockPositionService';
+import { fetchCandidates } from '../services/apiService';
 import { CandidateApiResponse } from '../types/kanban';
 
 interface UsePositionCandidatesResult {

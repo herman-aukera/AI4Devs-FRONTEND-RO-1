@@ -11,6 +11,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<RecruiterDashboard />} />
+        <Route path="/recruiter-dashboard" element={<RecruiterDashboard />} />
         <Route path="/add-candidate" element={<AddCandidate />} />
         <Route path="/positions" element={<Positions />} />
         <Route path="/positions/:id" element={<PositionDetail />} />

@@ -1,7 +1,7 @@
-// Custom hook for updating candidate stage
+// Custom hook for updating candidate stage with real API
 
 import { useState } from 'react';
-import { updateCandidateStage } from '../services/mockPositionService';
+import { updateCandidateStage } from '../services/apiService';
 
 interface UseUpdateCandidateStageResult {
   updateStage: (candidateId: number, applicationId: number, currentInterviewStep: number) => Promise<void>;

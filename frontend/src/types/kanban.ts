@@ -56,11 +56,13 @@ export interface KanbanContextType {
 }
 
 export interface PositionApiResponse {
-  positionName: string;
   interviewFlow: {
-    id: number;
-    description: string;
-    interviewSteps: InterviewStep[];
+    positionName: string;
+    interviewFlow: {
+      id: number;
+      description: string;
+      interviewSteps: InterviewStep[];
+    };
   };
 }
 

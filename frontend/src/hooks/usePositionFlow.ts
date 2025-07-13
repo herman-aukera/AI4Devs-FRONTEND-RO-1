@@ -1,7 +1,7 @@
 // Custom hook for fetching position flow data
 
 import { useCallback, useEffect, useState } from 'react';
-import { fetchInterviewFlow } from '../services/mockPositionService';
+import { fetchInterviewFlow } from '../services/apiService';
 import { PositionApiResponse } from '../types/kanban';
 
 interface UsePositionFlowResult {
